@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Learn about the history, vision, and beliefs of Achievers Gospel Chapel — a vibrant church at 27 Davies Street, Kissy Shell Old Road, Freetown, Sierra Leone.">
+  <title>About Us | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .history-timeline { position:relative; padding-left:2.5rem; }
+    .history-timeline::before { content:''; position:absolute; left:0.6rem; top:0; bottom:0; width:2px; background:linear-gradient(to bottom, var(--gold), var(--mauve)); }
+    .timeline-item { position:relative; margin-bottom:2.5rem; }
+    .timeline-item::before { content:''; position:absolute; left:-2.1rem; top:0.4rem; width:14px; height:14px; background:var(--gold); border-radius:50%; border:3px solid var(--white); box-shadow:0 0 0 2px var(--gold); }
+    .timeline-year { font-family:var(--ff-display); font-size:1.5rem; font-weight:700; color:var(--mauve-dark); margin-bottom:0.3rem; }
+    .beliefs-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+    .belief-card { background:var(--white); border-radius:var(--radius-lg); padding:2rem; box-shadow:var(--shadow-sm); border-top:3px solid var(--gold); }
+    .belief-card h4 { color:var(--mauve-deep); margin-bottom:0.7rem; }
+    .structure-list { list-style:none; }
+    .structure-list li { display:flex; gap:1rem; align-items:flex-start; padding:1.2rem 0; border-bottom:1px solid var(--light-gray); }
+    .structure-list li:last-child { border-bottom:none; }
+    .structure-icon { font-size:1.5rem; flex-shrink:0; margin-top:0.1rem; }
+  </style>
+  <meta property="og:title" content="About Us | Achievers Gospel Chapel">
+  <meta property="og:description" content="Learn about the history, vision, and beliefs of Achievers Gospel Chapel — a vibrant church at 27 Davies Street, Kissy Shell Old Road, Freetown, Sierra Leone.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+      <div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a>
+        <ul class="dropdown-menu">
+          <li><a href="about.html#history">Our History</a></li>
+          <li><a href="about.html#beliefs">What We Believe</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a>
+        <ul class="dropdown-menu">
+          <li><a href="departments.html">All Departments</a></li>
+          <li><a href="departments.html#youth">Youth Ministry</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a>
+        <ul class="dropdown-menu">
+          <li><a href="programs.html#medical">Medical Outreach</a></li>
+          <li><a href="programs.html#intimacy">Intimacy Worship</a></li>
+          <li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li>
+        </ul>
+      </li>
+      <li><a href="sermons.html">Sermons</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="testimonies.html">Testimonies</a></li>
+      <li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a><span>/</span><span>About Us</span>
+    </nav>
+    <h1>About Achievers Gospel Chapel</h1>
+    <p>Rooted in faith, growing in love, and reaching out with the gospel of Jesus Christ to all of Sierra Leone and beyond.</p>
+  </div>
+</div>
+
+<!-- CHURCH STORY -->
+<section id="history" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Story</span>
+      <h2 class="section-title">Church History</h2>
+      <p class="section-subtitle">From humble beginnings to a vibrant gospel community — this is the story of God's faithfulness.</p>
+    </div>
+    <div class="grid-2" style="align-items:start;gap:4rem;">
+      <div class="fade-up">
+        <div class="history-timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">The Beginning</div>
+            <strong style="color:var(--gold-dark);font-size:1rem;">3rd July 2016 — The Beginning</strong><p>Achievers Gospel Chapel was founded on 3rd July 2016 by Rev. Eustace Samuels and his wife, driven by a burning passion to reach the lost and build a community of believers in Freetown, Sierra Leone. Starting with a small gathering of faithful members, the church planted its roots at 27 Davies Street, Kissy Shell Old Road.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Growth</div>
+            <strong style="color:var(--gold-dark);font-size:1rem;">2018–2020 — Growing Strong</strong><p>As the ministry grew, new departments and programmes were established. The Chosen Generation Youth Department was formed, bringing young people together through dance, music, drama, and poetry. The Medical Outreach programme began touching lives in the surrounding community.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Ministry Expansion</div>
+            <strong style="color:var(--gold-dark);font-size:1rem;">2022–2026 — A Decade of Impact</strong><p>Intimacy Worship nights became a regular feature, drawing hundreds to encounter God in deep, powerful worship. Ecclesiastes was founded by Vince The Poet, creating a unique space where art, creativity, and the gospel intersect.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">Today</div>
+            <p>Achievers Gospel Chapel continues to grow as a vibrant, multi-generational church. With over 15 active departments, regular outreach activities, and a growing online presence, the ministry is fulfilling its mission to liberate souls, equip the saints, and stand steadfast in the faith.</p>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up" style="position:sticky;top:6rem;">
+        <div style="background:linear-gradient(160deg,var(--mauve-pale),var(--light-gray));border-radius:var(--radius-xl);padding:3rem;text-align:center;">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel" style="width:140px;height:140px;border-radius:50%;object-fit:cover;border:4px solid var(--gold);margin:0 auto 1.5rem;box-shadow:var(--shadow-gold);">
+          <h3 style="font-size:1.4rem;margin-bottom:0.5rem;">Our Motto</h3>
+          <p style="font-family:var(--ff-display);font-style:italic;font-size:1.2rem;color:var(--mauve);">"More Than Conquerors"</p>
+          <p style="font-size:0.85rem;color:var(--text-light);margin-top:0.3rem;">— Romans 8:37</p>
+          <hr style="border:none;border-top:1px solid var(--mauve-light);margin:1.5rem 0;">
+          <p style="font-size:0.9rem;line-height:1.8;">27 Davies Street, Kissy Shell Old Road<br>Freetown, Sierra Leone<br><br>
+          <a href="tel:+23276618024" style="color:var(--mauve-dark);font-weight:600;">+232 76 618024</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MISSION, VISION, VALUES -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Our Foundation</span>
+      <h2 class="section-title">Mission, Vision &amp; Values</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-bottom:3rem;">
+      <div class="fade-up" style="background:var(--mauve-pale);border-radius:var(--radius-xl);padding:2.5rem;text-align:center;border-top:5px solid var(--mauve);">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🎯</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.75rem;">Our Mission</h3>
+        <p style="font-style:italic;font-family:var(--ff-display);font-size:1.05rem;color:var(--mauve-deep);" data-cms-key="mission_text">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith</p>
+      </div>
+      <div class="fade-up" style="background:linear-gradient(160deg,var(--gold-dark),var(--gold));border-radius:var(--radius-xl);padding:2.5rem;text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">🌟</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.75rem;color:var(--mauve-deep);">Our Vision</h3>
+        <p style="font-style:italic;font-family:var(--ff-display);font-size:1.05rem;color:var(--mauve-deep);" data-cms-key="vision_text">Building Lives And Shaping Destinies</p>
+      </div>
+      <div class="fade-up" style="background:var(--mauve-deep);border-radius:var(--radius-xl);padding:2.5rem;text-align:center;">
+        <div style="font-size:2.5rem;margin-bottom:1rem;">💎</div>
+        <h3 style="font-size:1.4rem;margin-bottom:0.75rem;color:var(--white);">Our Core Values</h3>
+        <p style="color:rgba(255,255,255,0.85);font-size:0.95rem;line-height:2;">Faith • Love • Prayer<br>Unity • Service<br>Excellence • Integrity<br>Diligence</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATEMENT OF FAITH -->
+<section id="beliefs" style="background:var(--light-gray);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What We Believe</span>
+      <h2 class="section-title">Statement of Faith</h2>
+      <p class="section-subtitle">Our beliefs are grounded in the Holy Scriptures — the infallible Word of God.</p>
+    </div>
+    <div class="beliefs-grid">
+      <div class="belief-card fade-up">
+        <h4>📖 The Holy Bible</h4>
+        <p>We believe the Holy Bible is the inspired, infallible, and authoritative Word of God — the supreme standard for faith and conduct.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>✝️ The Trinity</h4>
+        <p>We believe in one God, eternally existing in three persons: Father, Son (Jesus Christ), and Holy Spirit — co-equal and co-eternal.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>🌟 Jesus Christ</h4>
+        <p>We believe in the deity of Jesus Christ, His virgin birth, sinless life, atoning death, bodily resurrection, ascension, and imminent return.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>🕊 The Holy Spirit</h4>
+        <p>We believe in the person and work of the Holy Spirit — His baptism, gifts, and fruit operative in believers today for ministry and holy living.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>💫 Salvation</h4>
+        <p>We believe salvation is by grace through faith in Jesus Christ alone. Repentance and new birth are necessary for all who are saved.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>🙏 Healing</h4>
+        <p>We believe in divine healing as provided for in the atonement of Christ and available to believers through prayer and faith.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>⛪ The Church</h4>
+        <p>We believe in the universal Church as the body of Christ, and in the local church as the expression of God's kingdom on earth.</p>
+      </div>
+      <div class="belief-card fade-up">
+        <h4>🌅 Eternal Life</h4>
+        <p>We believe in the resurrection of both the saved and the lost — the saved to eternal life, the lost to eternal separation from God.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHURCH STRUCTURE -->
+<section style="background:var(--white);">
+  <div class="container" style="max-width:800px;">
+    <div class="section-header">
+      <span class="section-label">Organisation</span>
+      <h2 class="section-title">Church Leadership Structure</h2>
+    </div>
+    <ul class="structure-list fade-up">
+      <li><span class="structure-icon">👑</span><div><h4>Senior Pastors</h4><p>Rev. Eustace Samuels &amp; Rev. Mrs. Eustace Samuels — overall spiritual oversight and direction of the ministry.</p></div></li>
+      <li><span class="structure-icon">🏛</span><div><h4>Board of Elders</h4><p>Seasoned spiritual leaders who provide counsel, accountability, and governance to the church.</p></div></li>
+      <li><span class="structure-icon">✝️</span><div><h4>Ministers</h4><p>Ordained and licensed ministers who assist in preaching, teaching, pastoral care, and ministry functions.</p></div></li>
+      <li><span class="structure-icon">🔥</span><div><h4>Department Heads</h4><p>Leaders of the various auxiliary and functionary departments who coordinate and oversee departmental activities.</p></div></li>
+      <li><span class="structure-icon">🌱</span><div><h4>Cell / Home Group Leaders</h4><p>Facilitators who lead small groups for fellowship, discipleship, and community building.</p></div></li>
+      <li><span class="structure-icon">👥</span><div><h4>General Members</h4><p>The heart of the church — every member is valued, gifted, and called to serve in the body of Christ.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

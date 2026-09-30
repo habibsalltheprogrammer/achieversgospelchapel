@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Meet the God-appointed leadership team of Achievers Gospel Chapel — Senior Pastors Rev. Eustace Samuels, Board of Elders, and Ministry Team.">
+  <title>Our Leadership | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .leader-full { display:grid; grid-template-columns:300px 1fr; gap:3rem; align-items:start; background:var(--white); border-radius:var(--radius-xl); padding:2.5rem; box-shadow:var(--shadow-md); margin-bottom:2.5rem; }
+    .leader-avatar { border-radius:var(--radius-xl); overflow:hidden; aspect-ratio:4/5; background:linear-gradient(160deg,var(--mauve-pale),var(--light-gray)); display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem; }
+    .leader-avatar .icon { font-size:5rem; opacity:0.5; }
+    .leader-avatar .hint { font-size:0.75rem; color:var(--text-light); font-style:italic; }
+    .leader-info h2 { font-size:2rem; margin-bottom:0.3rem; }
+    .leader-role { font-size:0.8rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:1.5rem; display:block; }
+    .leader-info p { margin-bottom:1rem; }
+    .leader-quote { font-family:var(--ff-display); font-style:italic; font-size:1.15rem; color:var(--mauve); border-left:3px solid var(--gold); padding-left:1.2rem; margin:1.5rem 0; }
+    .elder-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    .elder-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      text-align: center;
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .elder-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .elder-ph {
+      height: 220px;
+      background: linear-gradient(160deg,var(--mauve-pale),var(--light-gray));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.5rem;
+      opacity: 0.6;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .elder-ph img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+    }
+    .elder-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .elder-body h4 { font-size: 1.05rem; margin-bottom: 0.3rem; }
+    @media (max-width: 1024px) { .elder-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px)  { .elder-grid { grid-template-columns: 1fr; } }
+    .elder-role { font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold-dark); margin-bottom:0.7rem; }
+    .elder-body p { font-size:0.85rem; }
+    @media(max-width:768px){ .leader-full{grid-template-columns:1fr;} }
+  </style>
+  <meta property="og:title" content="Our Leadership | Achievers Gospel Chapel">
+  <meta property="og:description" content="Meet the God-appointed leadership team of Achievers Gospel Chapel — Senior Pastors Rev. Eustace Samuels, Board of Elders, and Ministry Team.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="about.html#beliefs">What We Believe</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><a href="about.html">About</a><span>/</span><span>Leadership</span></nav>
+    <h1>Our Leadership</h1>
+    <p>God-appointed, Spirit-filled leaders who shepherd Achievers Gospel Chapel with love, wisdom, and integrity.</p>
+  </div>
+</div>
+
+<!-- SENIOR PASTORS -->
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Spiritual Oversight</span>
+      <h2 class="section-title">Senior Pastors</h2>
+    </div>
+
+    <div class="leader-full fade-up">
+      <div class="leader-avatar" style="overflow:hidden;"><img src="../assets/images/pastor-eustace.jpg" alt="Rev. Eustace Samuels" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" data-cms-key="pastor1_image" data-cms-src></div>
+      <div class="leader-info">
+        <h2 data-cms-key="pastor1_name">Rev. Eustace Samuels</h2>
+        <span class="leader-role" data-cms-key="pastor1_role">Senior Pastor &amp; Founder</span>
+        <blockquote class="leader-quote">"My passion is to see every soul liberated by the power of the gospel and every believer standing firm in the faith."</blockquote>
+        <p data-cms-key="pastor1_bio">Rev. Eustace Samuels is the founder and senior pastor of Achievers Gospel Chapel. Called by God from an early age, he has dedicated his life to the proclamation of the gospel of Jesus Christ across Sierra Leone and beyond. His ministry is characterised by deep intercessory prayer, powerful preaching, and a genuine love for people.</p>
+        <p>Under his visionary leadership, Achievers Gospel Chapel has grown from a small gathering into a vibrant multi-generational church with numerous active ministries, outreach programmes, and community impact initiatives.</p>
+        <p>Rev. Samuels believes firmly in the power of God to heal, deliver, and transform lives — and countless testimonies across the congregation affirm this conviction.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn-mauve" style="font-size:0.85rem;padding:0.7rem 1.5rem;">📞 Contact Pastor</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="leader-full fade-up">
+      <div class="leader-avatar" style="overflow:hidden;"><img src="../assets/images/pastor-victoria.jpg" alt="Rev . (Mrs) Victoria Samuels" style="width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'" data-cms-key="pastor2_image" data-cms-src></div>
+      <div class="leader-info">
+        <h2 data-cms-key="pastor2_name">Rev . (Mrs) Victoria Samuels</h2>
+        <span class="leader-role" data-cms-key="pastor2_role">Co-Senior Pastor &amp; First Lady</span>
+        <blockquote class="leader-quote">"Every woman has a destiny. Every child has a future. Every family can be restored. I am here to walk alongside you in that journey."</blockquote>
+        <p data-cms-key="pastor2_bio">Rev . (Mrs) Victoria Samuels serves alongside her husband as Co-Senior Pastor of Achievers Gospel Chapel. A gifted teacher, mentor, and spiritual mother, she carries a special burden for women, families, and the next generation.</p>
+        <p>Her ministry to women and children has impacted countless lives, providing spiritual guidance, practical support, and a safe community for those going through difficult seasons. She leads the Women's Department with wisdom and compassion, helping women discover their identity, purpose, and potential in Christ.</p>
+        <p>Rev. Mrs. Samuels is a firm believer that the family is the bedrock of society and invests deeply in family ministry and counselling within the church and community.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+          <a href="contact.html" class="btn btn-mauve" style="font-size:0.85rem;padding:0.7rem 1.5rem;">📞 Contact Pastor</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ELDERS -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Church Governance</span>
+      <h2 class="section-title">Board of Elders</h2>
+      <p class="section-subtitle">Seasoned spiritual leaders who provide godly counsel, accountability, and governance to the church.</p>
+    </div>
+    <div class="elder-grid" id="eldersGrid">
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/elder-catherine-yamba.jpg" alt="Elder Catherine Y. Yamba" style="width:100%;height:200px;object-fit:cover;" onerror="this.style.display='none'"></div><div class="elder-body"><h4>Elder Catherine Y. Yamba</h4><span class="elder-role">Church Elder</span><p>A faithful servant of God who provides spiritual oversight and wisdom to the congregation.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/elder-aldephine-john.jpg" alt="Elder Mrs. Aldephine E. John" style="width:100%;height:200px;object-fit:cover;" onerror="this.style.display='none'"></div><div class="elder-body"><h4>Elder (Mrs.) Aldephine E. John</h4><span class="elder-role">Eagles Dept. Supervisor & Missions Head</span><p>Dedicated to prayer, the Word, and the spiritual health of the entire congregation.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/elder-moses-lansana.jpg" alt="Elder Moses Lansana" style="width:100%;height:200px;object-fit:cover;" onerror="this.style.display='none'"></div><div class="elder-body"><h4>Elder Moses Lansana</h4><span class="elder-role">Head of Welfare Department</span><p>Brings years of experience and spiritual maturity to guide the church in difficult decisions.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+            <article class="elder-card fade-up">
+        <div class="elder-ph" style="padding:0;">
+          <img src="../assets/images/elder-mohammed-vandy.jpg" alt="Elder Mohammed Vandy" style="width:100%;height:200px;object-fit:cover;object-position:top;" onerror="this.style.display='none'">
+        </div>
+        <div class="elder-body">
+          <h4>Elder Mohammed Vandy</h4>
+          <span class="elder-role">Head of Men's Dept. &amp; Media/Technical Supervisor</span>
+          <p>A devoted servant of God who leads the Men's Department and oversees the Media and Technical ministries of the church with excellence and dedication.</p>
+          <a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- MINISTERS -->
+<section style="background:var(--light-gray);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Ministry Team</span>
+      <h2 class="section-title">Ministers</h2>
+      <p class="section-subtitle">Ordained and licensed ministers who assist in preaching, teaching, and pastoral care.</p>
+    </div>
+    <div class="elder-grid" id="ministersGrid">
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/min-melvin-cole.jpg" alt="Min. Melvin A. Cole" style="width:100%;height:200px;object-fit:cover;" onerror="this.style.display='none'"></div><div class="elder-body"><h4>Min. Melvin A. Cole</h4><span class="elder-role">Gethsemane Hour & Fire in My Bones Coordinator</span><p>Gifted in teaching and discipleship, this minister serves the congregation with passion and dedication.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/min-sylvanus-langley.jpg" alt="Min. Sylvanus Langley" style="width:100%;height:200px;object-fit:cover;" onerror="this.style.display='none'"></div><div class="elder-body"><h4>Min. Sylvanus Langley</h4><span class="elder-role">Leader of Scholarship Trust Fund</span><p>Called to serve the community and empower members through scholarship and educational initiatives.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/rev-desmond-john.jpg" alt="Rev. Desmond John" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;"></div><div class="elder-body"><h4>Rev. Desmond John</h4><span class="elder-role">Supervisor — Men's Department</span><p>A devoted man of God leading the Men's Department with strength, purpose, and a passion for raising godly men.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/rev-paul-massaquoi.jpg" alt="Rev. Paul Massaquoi" style="width:100%;height:220px;object-fit:cover;object-position:top;display:block;"></div><div class="elder-body"><h4>Rev. Paul Massaquoi</h4><span class="elder-role">Supervisor of Evangelism & Missions Coordinator</span><p>Ordained to spread the gospel beyond the church walls, leading evangelism and mission outreach across Sierra Leone.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+      <article class="elder-card fade-up"><div class="elder-ph" style="padding:0;"><img src="../assets/images/prestige.jpeg" alt=" Min. Dr. Prestige B. M. Conteh" style="width:100%;height:200px;object-fit:cover;object-position:top;" onerror="this.style.display='none'"></div><div class="elder-body"><h4> Min. Dr. Prestige B. M. Conteh</h4><span class="elder-role">Leader of Eagles Dept & Head of Medical Committee</span><p>A gifted minister and medical professional dedicated to the spiritual and physical wellbeing of the congregation.</p><a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a></div></article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CHOIR LEADERSHIP -->
+<section style="padding:3rem 0;background:var(--mauve-pale);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:2rem;">
+      <span class="section-label">🎵 Music & Choir</span>
+      <h2 class="section-title">Choir Leadership</h2>
+      <p class="section-subtitle">Gifted musicians leading the congregation in Spirit-filled worship.</p>
+    </div>
+    <div class="elder-grid" style="max-width:900px;margin:0 auto;" id="choirGrid">
+      <article class="elder-card fade-up">
+        <div class="elder-ph" style="padding:0;">
+          <img src="../assets/images/mr-andrew-arinze.jpg" alt="Mr. Andrew Mayborn Arinze" style="width:100%;height:200px;object-fit:cover;object-position:top;">
+        </div>
+        <div class="elder-body">
+          <h4>Mr. Andrew Mayborn Arinze</h4>
+          <span class="elder-role">Choral Ensemble Choir Master</span>
+          <p>A talented musician and leader who directs the Choral Assembly with excellence and passion for worship.</p>
+          <a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a>
+        </div>
+      </article>
+      <article class="elder-card fade-up">
+        <div class="elder-ph" style="padding:0;">
+          <img src="../assets/images/ms-christiana-gbabai.jpg" alt="Ms. Christiana E. Gbabai" style="width:100%;height:200px;object-fit:cover;object-position:top;">
+        </div>
+        <div class="elder-body">
+          <h4>Ms. Christiana E. Gbabai</h4>
+          <span class="elder-role">Choir Mistress — Achievers Gospel Choir</span>
+          <p>A gifted worship leader who leads the Achievers Gospel Choir with skill, dedication and a heart for God.</p>
+          <a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a>
+        </div>
+      </article>
+      <article class="elder-card fade-up">
+        <div class="elder-ph" style="padding:0;">
+          <img src="../assets/images/mr-alicious-kamara.jpg" alt="Mr. Alicious Kamara" style="width:100%;height:200px;object-fit:cover;object-position:top;">
+        </div>
+        <div class="elder-body">
+          <h4>Mr. Alicious Kamara</h4>
+          <span class="elder-role">Choir Director — Achievers Gospel Choir</span>
+          <p>An anointed choir director who brings out the best in the Achievers Gospel Choir through musical excellence.</p>
+          <a href="contact.html" class="btn btn-outline mt-1" style="font-size:0.78rem;padding:0.5rem 1.2rem;">Contact</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

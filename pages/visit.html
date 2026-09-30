@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Planning to visit Achievers Gospel Chapel? Find service times, directions, parking info, and everything you need for your first visit.">
+  <title>Plan Your Visit | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .visit-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:2rem; margin-bottom:3rem; }
+    .step-card { background:var(--white); border-radius:var(--radius-xl); padding:2rem; text-align:center; box-shadow:var(--shadow-sm); transition:var(--transition); position:relative; }
+    .step-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .step-num { position:absolute; top:-1rem; left:50%; transform:translateX(-50%); width:36px; height:36px; background:linear-gradient(135deg,var(--gold),var(--gold-light)); border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:0.9rem; color:var(--mauve-deep); box-shadow:var(--shadow-gold); }
+    .step-icon { font-size:2.5rem; margin:0.8rem 0; display:block; }
+    .step-card h4 { font-size:1rem; margin-bottom:0.4rem; }
+    .step-card p { font-size:0.85rem; }
+    .faq-list { max-width:800px; margin:0 auto; }
+    .faq-item { border-bottom:1px solid var(--light-gray); }
+    .faq-question { display:flex; justify-content:space-between; align-items:center; padding:1.2rem 0; cursor:pointer; font-weight:600; font-size:0.98rem; color:var(--text-dark); transition:var(--transition-fast); gap:1rem; }
+    .faq-question:hover { color:var(--mauve-dark); }
+    .faq-toggle { font-size:1.3rem; color:var(--gold); flex-shrink:0; transition:transform 0.3s; }
+    .faq-item.open .faq-toggle { transform:rotate(45deg); }
+    .faq-answer { max-height:0; overflow:hidden; transition:max-height 0.4s ease; }
+    .faq-answer p { padding-bottom:1.2rem; font-size:0.92rem; color:var(--text-mid); }
+    .faq-item.open .faq-answer { max-height:300px; }
+    .service-times-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; }
+    .service-time-card { background:var(--white); border-radius:var(--radius-lg); padding:2rem; text-align:center; box-shadow:var(--shadow-sm); border-top:4px solid var(--gold); transition:var(--transition); }
+    .service-time-card:hover { background:var(--mauve-pale); transform:translateY(-3px); }
+    .service-time-card .icon { font-size:2rem; margin-bottom:0.8rem; display:block; }
+    .service-time-card h4 { font-size:1rem; margin-bottom:0.4rem; }
+    .service-time-card .time { font-size:1.3rem; font-weight:700; color:var(--gold-dark); font-family:var(--ff-display); }
+    .service-time-card .day { font-size:0.8rem; color:var(--text-light); margin-top:0.2rem; }
+  </style>
+  <meta property="og:title" content="Plan Your Visit | Achievers Gospel Chapel">
+  <meta property="og:description" content="Planning to visit Achievers Gospel Chapel? Find service times, directions, parking info, and everything you need for your first visit.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Plan Your Visit</span></nav>
+    <h1>Plan Your Visit</h1>
+    <p>We're so glad you're considering joining us. Here's everything you need to know to make your first visit a wonderful experience.</p>
+  </div>
+</div>
+
+<!-- WHAT TO EXPECT -->
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">First Time?</span>
+      <h2 class="section-title">What to Expect</h2>
+      <p class="section-subtitle">No matter your background, you are welcome here. Here's what a typical Sunday at Achievers Gospel Chapel looks like.</p>
+    </div>
+    <div class="visit-steps">
+      <div class="step-card fade-up">
+        <div class="step-num">1</div>
+        <span class="step-icon">🤝</span>
+        <h4>Warm Welcome</h4>
+        <p>Our friendly ushers will greet you at the door with smiles, programmes, and help finding a seat. You'll feel at home immediately.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">2</div>
+        <span class="step-icon">🎵</span>
+        <h4>Praise & Worship</h4>
+        <p>Services begin with powerful, Spirit-filled praise and worship. You can stand, sing along, or simply soak in God's presence.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">3</div>
+        <span class="step-icon">📖</span>
+        <h4>The Word</h4>
+        <p>Our pastors deliver clear, practical, and anointed Bible messages that are relevant to everyday life.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">4</div>
+        <span class="step-icon">🙏</span>
+        <h4>Prayer & Ministry</h4>
+        <p>We believe in prayer. After the message, there is an opportunity for personal prayer, healing prayer, and salvation.</p>
+      </div>
+      <div class="step-card fade-up">
+        <div class="step-num">5</div>
+        <span class="step-icon">☕</span>
+        <h4>Fellowship</h4>
+        <p>After service, stay and connect. Our welcoming community would love to meet you, share a conversation, and answer your questions.</p>
+      </div>
+    </div>
+
+    <!-- WELCOME BOX -->
+    <div style="background:linear-gradient(160deg,var(--mauve-pale),var(--light-gray));border-radius:var(--radius-xl);padding:3rem;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center;" class="fade-up">
+      <div>
+        <span class="section-label" style="text-align:left;">You Are Welcome</span>
+        <h3 style="font-size:1.8rem;margin-bottom:1rem;">Come Just As You Are</h3>
+        <p>You don't need to have it all together before you come to church. Whether you're searching for answers, going through a difficult time, or simply curious about God — Achievers Gospel Chapel is a safe place for your journey.</p>
+        <p style="margin-top:1rem;">We celebrate diversity, welcome questions, and believe that every person who walks through our doors has God-given purpose and potential.</p>
+        <a href="contact.html" class="btn btn-mauve mt-2">Let Us Know You're Coming</a>
+      </div>
+      <div style="text-align:center;">
+        <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel" style="width:150px;height:150px;border-radius:50%;object-fit:cover;margin:0 auto 1.5rem;border:4px solid var(--gold);box-shadow:var(--shadow-gold);">
+        <p style="font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--mauve);">"A place where lives are built and destinies shaped."</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE TIMES -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Join Us</span>
+      <h2 class="section-title">Service Times</h2>
+      <p class="section-subtitle">Multiple opportunities every week to gather, worship, study, and grow together.</p>
+    </div>
+    <div class="service-times-grid">
+      <div class="service-time-card fade-up">
+        <span class="icon">🕊</span>
+        <h4>Sunday Worship</h4>
+        <div class="time">9:00 AM</div>
+        <div class="day">Every Sunday</div>
+        <p style="font-size:0.8rem;margin-top:0.8rem;color:var(--text-light);">Main sanctuary service with praise, worship, and the Word.</p>
+      </div>
+      <div class="service-time-card fade-up">
+        <span class="icon">📖</span>
+        <h4>Bible Study</h4>
+        <div class="time">6:00 PM</div>
+        <div class="day">Every Wednesday</div>
+        <p style="font-size:0.8rem;margin-top:0.8rem;color:var(--text-light);">In-depth study of God's Word. Currently studying Ephesians.</p>
+      </div>
+      <div class="service-time-card fade-up">
+        <span class="icon">🙏</span>
+        <h4>Prayer Meeting</h4>
+        <div class="time">6:00 AM</div>
+        <div class="day">Every Friday</div>
+        <p style="font-size:0.8rem;margin-top:0.8rem;color:var(--text-light);">Early morning intercessory prayer open to all members.</p>
+      </div>
+      <div class="service-time-card fade-up">
+        <span class="icon">🔥</span>
+        <h4>Youth Meeting</h4>
+        <div class="time">3:00 PM</div>
+        <div class="day">Every Saturday</div>
+        <p style="font-size:0.8rem;margin-top:0.8rem;color:var(--text-light);">Vibrant gathering for young people aged 12–35.</p>
+      </div>
+      <div class="service-time-card fade-up">
+        <span class="icon">📚</span>
+        <h4>Sunday School</h4>
+        <div class="time">8:00 AM</div>
+        <div class="day">Every Sunday</div>
+        <p style="font-size:0.8rem;margin-top:0.8rem;color:var(--text-light);">Structured Bible teaching for all ages before main service.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS & PARKING -->
+<section style="background:var(--light-gray);">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;align-items:start;">
+      <div class="fade-up">
+        <span class="section-label">Getting Here</span>
+        <h2 style="font-size:1.9rem;margin-bottom:1rem;">Directions</h2>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail-text">
+            <div class="label">Church Address</div>
+            <div class="value">27 Davies Street, Kissy Shell Old Road,<br>Freetown, Sierra Leone</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🚌</div>
+          <div class="contact-detail-text">
+            <div class="label">Public Transport</div>
+            <div class="value">Accessible by poda-poda and okada from Kissy and central Freetown. Ask for Davies Street near Shell Old Road.</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🚗</div>
+          <div class="contact-detail-text">
+            <div class="label">By Private Car</div>
+            <div class="value">Turn onto Davies Street from the Kissy Shell Old Road junction. The church is situated at number 27. Limited parking available on the premises.</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🅿</div>
+          <div class="contact-detail-text">
+            <div class="label">Parking</div>
+            <div class="value">On-site parking is available for Sunday services. Additional street parking on nearby roads. Arrive early on special events for best availability.</div>
+          </div>
+        </div>
+      </div>
+      <div class="fade-up">
+        <div style="border-radius:12px;overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps?q=27+Davies+Street,+Kissy+Shell+Old+Road,+Freetown,+Sierra+Leone&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Achievers Gospel Chapel Location">
+          </iframe>
+        </div>
+          <p><strong>Interactive Map</strong><br>27 Davies Street, Kissy Shell Old Road, Freetown<br><small>Embed your Google Maps API key in config/.env to activate</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHILDREN'S MINISTRY -->
+<section style="background:var(--white);">
+  <div class="container">
+    <div class="grid-2" style="gap:4rem;align-items:center;">
+      <div class="fade-up">
+        <div style="background:linear-gradient(160deg,#f9a8d4,#e879a4);border-radius:var(--radius-xl);height:300px;display:flex;align-items:center;justify-content:center;font-size:6rem;">👶</div>
+      </div>
+      <div class="fade-up">
+        <span class="section-label">Families Welcome</span>
+        <h2 style="font-size:1.9rem;margin-bottom:1rem;">Children's Ministry</h2>
+        <div class="divider left"></div>
+        <p>We love children at Achievers Gospel Chapel! Our dedicated Children's Ministry creates a safe, nurturing, and fun environment where your little ones can learn about Jesus in age-appropriate ways.</p>
+        <p style="margin-top:1rem;">During Sunday services, children are welcomed into their own sessions where they experience worship, Bible stories, crafts, and games designed for their age group.</p>
+        <div class="mvv-grid" style="margin-top:1.5rem;">
+          <div class="mvv-card" style="border-left-color:var(--mauve);">
+            <h4>👶 Ages 0–3</h4>
+            <p>Supervised nursery with loving caregivers during all services.</p>
+          </div>
+          <div class="mvv-card">
+            <h4>🧒 Ages 4–7</h4>
+            <p>Pre-school Sunday School with Bible stories and interactive activities.</p>
+          </div>
+          <div class="mvv-card" style="border-left-color:var(--mauve);">
+            <h4>👦 Ages 8–12</h4>
+            <p>Junior Church with structured Bible teaching, worship, and discipleship.</p>
+          </div>
+          <div class="mvv-card">
+            <h4>🔒 Child Safety</h4>
+            <p>All children's workers are vetted. Children are signed in and out safely.</p>
+          </div>
+        </div>
+        <a href="departments.html#children" class="btn btn-mauve mt-2">Learn More About Children's Ministry</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Questions?</span>
+      <h2 class="section-title">Visitor FAQs</h2>
+      <p class="section-subtitle">Common questions from first-time visitors. Don't see your question? ContactUs directly!</p>
+    </div>
+    <div class="faq-list fade-up">
+      <div class="faq-item open">
+        <div class="faq-question" role="button" tabindex="0">Do I need to be a Christian to attend? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Absolutely not! Achievers Gospel Chapel welcomes everyone — believers and seekers alike. Whether you have faith, have questions, or are simply curious, you are welcome to come and experience church with us. We are a non-judgmental community.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">What should I wear? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Come as you are! There is no formal dress code. Most members dress smart-casually for Sunday services. What matters most to us is that you are comfortable and present. God looks at the heart, not the wardrobe.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">How long is the Sunday service? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Our Sunday worship service typically runs from 9:00 AM to approximately 11:30 AM — about two and a half hours. This includes praise and worship, announcements, the sermon, prayer ministry, and an offering. Special services and programmes may run longer.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">Is there parking available? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Yes, we have on-site parking available at the church premises on Davies Street. For larger events and special services, additional street parking is available on nearby roads. We recommend arriving early on busy Sundays and special occasions.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">Do I have to give money? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>There is no obligation for first-time visitors to give. An offering is collected during service as an act of worship for church members. We will never pressure anyone to give, and there is absolutely no charge to attend any of our services or programmes.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">Can I become a member? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>Yes! We have a structured membership process that includes an orientation class, meeting with the pastoral team, and a formal membership commitment. Membership gives you full participation rights in the church community and access to all ministry opportunities. ContactUs to start the process.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">What if I need prayer or pastoral care? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>We have a trained pastoral team and intercessory ministry available to pray with you. You can submit a prayer request online, approach one of our ministers after service, or contact the church office to schedule a pastoral appointment. All conversations are treated with the utmost confidentiality.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" role="button" tabindex="0">Are your services available online? <span class="faq-toggle">+</span></div>
+        <div class="faq-answer"><p>We live stream our Sunday services on our social media platforms. Follow us on Facebook, YouTube, and Instagram for live streams and recorded services. You can also access sermon recordings on our Sermons page on this website.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(160deg,var(--mauve-deep),var(--mauve-dark));padding:5rem 0;text-align:center;">
+  <div class="container" style="max-width:650px;">
+    <span class="section-label">We're Expecting You</span>
+    <h2 style="color:var(--white);margin-bottom:0.75rem;">Ready to Visit?</h2>
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:2rem;">Let us know you're coming and we'll make sure someone is ready to welcome you personally when you arrive.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-primary">📩 Let Us Know You're Coming</a>
+      <a href="contact.html" class="btn btn-secondary">📞 Call +232 76 618024</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    });
+    q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') q.click(); });
+  });
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

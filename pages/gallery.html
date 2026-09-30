@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Browse photos from AGC events — 10th Anniversary, First Sunday Services, Youth Programs, Young Adults, Worship Services, and more.">
+  <title>Gallery | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <meta property="og:title" content="Gallery | Achievers Gospel Chapel">
+  <meta property="og:description" content="Browse photos from AGC events — 10th Anniversary, First Sunday Services, Youth Programs, Young Adults, Worship Services, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <style>
+    /* ── Gallery Accordion ───────────────────────────────── */
+    .gallery-accordion { max-width: 900px; margin: 0 auto 4rem; display: flex; flex-direction: column; gap: 1rem; }
+
+    .gallery-event {
+      background: var(--white);
+      border-radius: 16px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      overflow: hidden;
+      border: 1px solid rgba(74,45,78,0.1);
+      transition: box-shadow 0.3s;
+    }
+    .gallery-event:hover { box-shadow: 0 4px 24px rgba(74,45,78,0.15); }
+    .gallery-event.open { border-color: var(--mauve); box-shadow: 0 6px 32px rgba(74,45,78,0.2); }
+
+    .gallery-event-header {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.4rem 1.8rem;
+      cursor: pointer;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .gallery-event-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--mauve-pale), var(--light-gray));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      transition: background 0.3s;
+    }
+    .gallery-event.open .gallery-event-icon {
+      background: linear-gradient(135deg, var(--mauve), var(--mauve-deep));
+    }
+
+    .gallery-event-info { flex: 1; min-width: 0; }
+    .gallery-event-info h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin: 0 0 0.2rem;
+      transition: color 0.3s;
+    }
+    .gallery-event.open .gallery-event-info h3 { color: var(--mauve); }
+    .gallery-event-info p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin: 0;
+    }
+    .gallery-event-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-shrink: 0;
+    }
+    .gallery-event-count {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--mauve);
+      background: var(--mauve-pale);
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+    .gallery-event-chevron {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s, transform 0.3s;
+      flex-shrink: 0;
+      font-size: 1rem;
+      color: var(--mauve);
+    }
+    .gallery-event.open .gallery-event-chevron {
+      background: var(--mauve);
+      color: #fff;
+      transform: rotate(180deg);
+    }
+
+    /* ── Photo Grid (hidden by default) ─────────────────── */
+    .gallery-event-body {
+      display: none;
+      padding: 0 1.8rem 1.8rem;
+    }
+    .gallery-event.open .gallery-event-body { display: block; }
+
+    .gallery-event-divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--mauve-pale), transparent);
+      margin-bottom: 1.5rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.8rem;
+    }
+    .photo-card {
+      aspect-ratio: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      background: var(--mauve-pale);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .photo-card:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    }
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transition: transform 0.4s;
+    }
+    .photo-card:hover img { transform: scale(1.06); }
+    .photo-card .photo-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(45,10,45,0.4);
+      opacity: 0;
+      transition: opacity 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 1.5rem;
+      border-radius: 10px;
+    }
+    .photo-card:hover .photo-overlay { opacity: 1; }
+
+    /* ── Lightbox ─────────────────────────────────────────── */
+    .agc-lb {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.95);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: lbFadeIn 0.2s ease;
+      backdrop-filter: blur(10px);
+    }
+    @keyframes lbFadeIn { from { opacity:0 } to { opacity:1 } }
+    .agc-lb-img {
+      max-width: 88vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+      animation: lbZoom 0.3s cubic-bezier(.2,.8,.3,1.1);
+    }
+    @keyframes lbZoom { from { opacity:0; transform:scale(0.85) } to { opacity:1; transform:scale(1) } }
+    .agc-lb-close {
+      position: absolute; top: 1.2rem; right: 1.4rem;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: none;
+      color: #fff; font-size: 1.5rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .agc-lb-close:hover { background: rgba(255,255,255,0.3); transform: scale(1.1) rotate(90deg); }
+    .agc-lb-counter {
+      position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+      background: rgba(255,255,255,0.15); color: #fff;
+      border-radius: 50px; padding: 0.4rem 1.2rem;
+      font-size: 0.85rem; backdrop-filter: blur(6px);
+    }
+    .agc-lb-nav {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      width: 52px; height: 52px; border-radius: 50%;
+      background: rgba(255,255,255,0.15); border: none; color: #fff;
+      font-size: 2rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .agc-lb-nav:hover { background: rgba(255,255,255,0.3); transform: translateY(-50%) scale(1.1); }
+    .agc-lb-prev { left: 1rem; }
+    .agc-lb-next { right: 1rem; }
+
+    /* ── Responsive ───────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .gallery-event-header { padding: 1.1rem 1.2rem; gap: 0.9rem; }
+      .gallery-event-icon { width: 46px; height: 46px; font-size: 1.3rem; border-radius: 12px; }
+      .gallery-event-body { padding: 0 1.2rem 1.2rem; }
+      .photo-grid { grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
+      .gallery-event-count { display: none; }
+    }
+
+    /* ── Preview thumbnails on card header ──────────────── */
+    .gallery-event-previews {
+      display: flex;
+      gap: 6px;
+      flex-shrink: 0;
+      align-items: center;
+    }
+    .gallery-event-previews img {
+      width: 56px;
+      height: 56px;
+      object-fit: cover;
+      border-radius: 8px;
+      opacity: 0.85;
+      transition: opacity 0.2s;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+    .gallery-event:hover .gallery-event-previews img { opacity: 1; }
+    .gallery-event.open .gallery-event-previews img { opacity: 0.5; }
+    @media (max-width: 600px) {
+      .gallery-event-previews { display: none; }
+    }
+    @media (max-width: 480px) {
+      .gallery-event-info h3 { font-size: 0.92rem; }
+      .photo-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+      .gallery-accordion { gap: 0.7rem; }
+    }
+  </style>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">ContactUs</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Gallery</span></nav>
+    <h1>Photo Gallery</h1>
+    <p>Glimpses of worship, community, outreach, and the life of Achievers Gospel Chapel — captured in moments of grace.</p>
+  </div>
+</div>
+
+<section style="padding:4rem 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:3rem;">
+      <span class="section-label">📸 Our Moments</span>
+      <h2 class="section-title">Event Gallery</h2>
+      <p style="color:var(--text-light);max-width:520px;margin:0 auto;font-size:0.95rem;">Select an event below to browse its photos. Click any photo to view it full size.</p>
+    </div>
+
+    
+    <!-- ── Visual Glimpse Strip ───────────────────────────── -->
+    <div style="margin-bottom:3.5rem;">
+      <p style="text-align:center;font-size:0.85rem;color:var(--text-light);margin-bottom:1.2rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:600;">A Glimpse of Our Moments</p>
+      <div id="glimpseGrid" style="display:grid;grid-template-columns:repeat(6,1fr);grid-template-rows:auto auto;gap:0.6rem;border-radius:16px;overflow:hidden;">
+
+        <!-- Large left image spans 2 rows -->
+        <div style="grid-column:1/3;grid-row:1/3;overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/anniversary/05.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+
+        <!-- Row 1 — 4 small images -->
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/anniversary/12.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/youth/03.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/young-adults/10.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/anniversary/20.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+
+        <!-- Row 2 — 4 small images -->
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/anniversary/11.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/youth/15.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/anniversary/35.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+        <div style="overflow:hidden;border-radius:12px;aspect-ratio:1;">
+          <img src="../assets/images/first-sunday/12.jpg" alt="AGC Moment" style="width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.4s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+        </div>
+      </div>
+      <p style="text-align:center;font-size:0.8rem;color:var(--text-light);margin-top:1rem;font-style:italic;">Click an event below to browse the full collection ↓</p>
+    </div>
+
+<div class="gallery-accordion" id="galleryAccordion">
+
+      <!-- 1. 10th Anniversary -->
+      <div class="gallery-event" data-event="anniversary">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🎉</div>
+          <div class="gallery-event-info">
+            <h3>10th Anniversary Celebration</h3>
+            <p>AGC@10 — A Decade of God's Faithfulness · 3rd July 2026</p>
+          </div>
+          <div class="gallery-event-previews">
+            <img src="../assets/images/anniversary/03.jpg" alt="" loading="lazy">
+            <img src="../assets/images/anniversary/10.jpg" alt="" loading="lazy">
+            <img src="../assets/images/anniversary/20.jpg" alt="" loading="lazy">
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">71 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+                    <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/anniversary/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/anniversary/10.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/anniversary/20.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/anniversary/35.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/anniversary/50.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-anniversary"></div>
+        </div>
+      </div>
+
+      <!-- 2. Youth Programs -->
+      <div class="gallery-event" data-event="youth">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🔥</div>
+          <div class="gallery-event-info">
+            <h3>Youth Programs</h3>
+            <p>Chosen Generation — Raising a generation of faith and purpose</p>
+          </div>
+          <div class="gallery-event-previews">
+            <img src="../assets/images/youth/05.jpg" alt="" loading="lazy">
+            <img src="../assets/images/youth/15.jpg" alt="" loading="lazy">
+            <img src="../assets/images/youth/30.jpg" alt="" loading="lazy">
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">48 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+                    <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/youth/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youth/08.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youth/16.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youth/24.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youth/35.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-youth"></div>
+        </div>
+      </div>
+
+      <!-- 3. Young Adult Thanksgiving -->
+      <div class="gallery-event" data-event="first-sunday">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">✨</div>
+          <div class="gallery-event-info">
+            <h3>Young Adult Thanksgiving</h3>
+            <p>A celebration of gratitude and faith by the young adults of AGC</p>
+          </div>
+          <div class="gallery-event-previews">
+            <img src="../assets/images/youngadult/04.jpg" alt="" loading="lazy">
+            <img src="../assets/images/youngadult/12.jpg" alt="" loading="lazy">
+            <img src="../assets/images/youngadult/25.jpg" alt="" loading="lazy">
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">32 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+                    <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/youngadult/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youngadult/05.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youngadult/12.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youngadult/18.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/youngadult/25.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-first-sunday"></div>
+        </div>
+      </div>
+
+      <!-- 4. First Sunday Service -->
+      <div class="gallery-event" data-event="young-adults">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🌟</div>
+          <div class="gallery-event-info">
+            <h3>First Sunday Service</h3>
+            <p>Monthly First Sunday celebration services at Achievers Gospel Chapel</p>
+          </div>
+          <div class="gallery-event-previews">
+            <img src="../assets/images/first%20sunday/03.jpg" alt="" loading="lazy">
+            <img src="../assets/images/first%20sunday/12.jpg" alt="" loading="lazy">
+            <img src="../assets/images/first%20sunday/22.jpg" alt="" loading="lazy">
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">27 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+                    <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/first%20sunday/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/first%20sunday/05.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/first%20sunday/10.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/first%20sunday/15.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/first%20sunday/20.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-young-adults"></div>
+        </div>
+      </div>
+
+      <!-- 5. Medical Outreach -->
+      <div class="gallery-event" data-event="community">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🌍</div>
+          <div class="gallery-event-info">
+            <h3>Medical Outreach</h3>
+            <p>Taking the love of God beyond the church walls into the community</p>
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">76 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+          <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/community/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/community/05.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/community/10.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/community/15.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/community/20.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-community"></div>
+        </div>
+      </div>
+
+      <!-- 6. Worship Services -->
+      <div class="gallery-event" data-event="worship">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🕊</div>
+          <div class="gallery-event-info">
+            <h3>Worship Services</h3>
+            <p>Sunday Divine Services — Spirit-filled worship every week</p>
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">Coming Soon</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+          <div style="text-align:center;padding:2rem;color:var(--text-light);">📸 Photos coming soon — check back after the next service!</div>
+        </div>
+      </div>
+
+      <!-- 7. Intimacy Worship -->
+      <div class="gallery-event" data-event="intimacy">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">🎶</div>
+          <div class="gallery-event-info">
+            <h3>Intimacy Worship Night</h3>
+            <p>An evening of deep worship, prayer and encounter with God</p>
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">39 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+          <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/intimacy/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/intimacy/05.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/intimacy/10.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/intimacy/15.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/intimacy/20.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-intimacy"></div>
+        </div>
+      </div>
+
+      <!-- 8. The Ecclesiastes -->
+      <div class="gallery-event" data-event="ecclesiastes">
+        <div class="gallery-event-header">
+          <div class="gallery-event-icon">📜</div>
+          <div class="gallery-event-info">
+            <h3>The Ecclesiastes</h3>
+            <p>Poetry · Worship · Purpose — A spoken word and creative arts ministry</p>
+          </div>
+          <div class="gallery-event-meta">
+            <span class="gallery-event-count">41 Photos</span>
+            <div class="gallery-event-chevron">▾</div>
+          </div>
+        </div>
+        <div class="gallery-event-body">
+          <div class="gallery-event-divider"></div>
+                    <!-- Preview strip -->
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:0.5rem;margin-bottom:1rem;border-radius:10px;overflow:hidden;">
+            <img src="../assets/images/ecclesiastes/01.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/ecclesiastes/08.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/ecclesiastes/15.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/ecclesiastes/25.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+            <img src="../assets/images/ecclesiastes/35.jpg" style="width:100%;height:80px;object-fit:cover;" loading="lazy">
+          </div>
+          <div class="photo-grid" id="grid-ecclesiastes"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/></svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+
+<!-- Back to Top -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));color:#fff;font-size:1.2rem;border:none;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.25);display:none;align-items:center;justify-content:center;transition:transform 0.2s,opacity 0.3s;">▲</button>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;background:rgba(30,10,30,0.97);color:#fff;padding:1rem 1.5rem;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">🍪 This website uses contact forms powered by Formspree to receive your messages. By submitting a form you agree to your data being processed as described in our <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.</p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+// ── Photo data ────────────────────────────────────────────
+const GALLERY_DATA = {
+  'anniversary':  { path: '../assets/images/anniversary/', count: 71 },
+  'youth':        { path: '../assets/images/youth/',       count: 48 },
+  'first-sunday': { path: '../assets/images/first%20sunday/', count: 27 },
+  'young-adults': { path: '../assets/images/youngadult/',     count: 32 },
+  'community':    { path: '../assets/images/community/',   count: 76 },
+  'intimacy':     { path: '../assets/images/intimacy/',    count: 39 },
+  'ecclesiastes': { path: '../assets/images/ecclesiastes/',count: 41 },
+};
+
+// ── Build photo grids (lazy — only when opened) ───────────
+function buildGrid(eventKey) {
+  const data = GALLERY_DATA[eventKey];
+  if (!data) return;
+  const grid = document.getElementById('grid-' + eventKey);
+  if (!grid || grid.dataset.built) return;
+  grid.dataset.built = '1';
+  const photos = [];
+  for (let i = 1; i <= data.count; i++) {
+    const src = data.path + String(i).padStart(2, '0') + '.jpg';
+    photos.push(src);
+    const card = document.createElement('div');
+    card.className = 'photo-card';
+    card.dataset.idx = i - 1;
+    card.dataset.event = eventKey;
+    card.innerHTML = `<img loading="lazy" src="${src}" alt="Photo ${i}"><div class="photo-overlay">🔍</div>`;
+    grid.appendChild(card);
+  }
+}
+
+// ── Accordion ─────────────────────────────────────────────
+document.querySelectorAll('.gallery-event-header').forEach(header => {
+  header.addEventListener('click', () => {
+    const event = header.parentElement;
+    const isOpen = event.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.gallery-event').forEach(e => e.classList.remove('open'));
+    // Open clicked if it was closed
+    if (!isOpen) {
+      event.classList.add('open');
+      buildGrid(event.dataset.event);
+      // Smooth scroll to event
+      setTimeout(() => event.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
+  });
+});
+
+// ── Lightbox ──────────────────────────────────────────────
+let lbPhotos = [];
+let lbIdx = 0;
+let lbEl = null;
+
+function openLightbox(photos, idx) {
+  lbPhotos = photos;
+  lbIdx = idx;
+  if (lbEl) lbEl.remove();
+
+  lbEl = document.createElement('div');
+  lbEl.className = 'agc-lb';
+  lbEl.innerHTML = `
+    <button class="agc-lb-close" aria-label="Close">&times;</button>
+    <button class="agc-lb-nav agc-lb-prev" aria-label="Previous">&#8249;</button>
+    <img class="agc-lb-img" src="${lbPhotos[lbIdx]}" alt="Gallery photo">
+    <button class="agc-lb-nav agc-lb-next" aria-label="Next">&#8250;</button>
+    <div class="agc-lb-counter">${lbIdx + 1} / ${lbPhotos.length}</div>`;
+
+  lbEl.querySelector('.agc-lb-close').addEventListener('click', closeLightbox);
+  lbEl.querySelector('.agc-lb-prev').addEventListener('click', e => { e.stopPropagation(); showLbPhoto(lbIdx - 1); });
+  lbEl.querySelector('.agc-lb-next').addEventListener('click', e => { e.stopPropagation(); showLbPhoto(lbIdx + 1); });
+  lbEl.addEventListener('click', e => { if (e.target === lbEl) closeLightbox(); });
+
+  document.body.appendChild(lbEl);
+  document.body.style.overflow = 'hidden';
+}
+
+function showLbPhoto(idx) {
+  lbIdx = ((idx % lbPhotos.length) + lbPhotos.length) % lbPhotos.length;
+  const img = lbEl.querySelector('.agc-lb-img');
+  const counter = lbEl.querySelector('.agc-lb-counter');
+  img.style.opacity = '0';
+  img.style.transform = 'scale(0.92)';
+  setTimeout(() => {
+    img.src = lbPhotos[lbIdx];
+    img.style.transition = 'opacity 0.25s, transform 0.25s';
+    img.style.opacity = '1';
+    img.style.transform = 'scale(1)';
+    counter.textContent = (lbIdx + 1) + ' / ' + lbPhotos.length;
+  }, 150);
+}
+
+function closeLightbox() {
+  if (lbEl) { lbEl.remove(); lbEl = null; }
+  document.body.style.overflow = '';
+}
+
+// ── Photo click handler ───────────────────────────────────
+document.getElementById('galleryAccordion').addEventListener('click', e => {
+  const card = e.target.closest('.photo-card');
+  if (!card) return;
+  const eventKey = card.dataset.event;
+  const grid = document.getElementById('grid-' + eventKey);
+  if (!grid) return;
+  const allCards = Array.from(grid.querySelectorAll('.photo-card'));
+  const photos = allCards.map(c => c.querySelector('img').src);
+  const idx = parseInt(card.dataset.idx) || 0;
+  openLightbox(photos, idx);
+});
+
+// ── Keyboard ──────────────────────────────────────────────
+document.addEventListener('keydown', e => {
+  if (!lbEl) return;
+  if (e.key === 'ArrowRight' || e.key === 'ArrowDown') showLbPhoto(lbIdx + 1);
+  if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   showLbPhoto(lbIdx - 1);
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// ── Touch swipe ───────────────────────────────────────────
+let touchX = 0;
+document.addEventListener('touchstart', e => { if (lbEl) touchX = e.touches[0].clientX; }, { passive: true });
+document.addEventListener('touchend', e => {
+  if (!lbEl) return;
+  const diff = touchX - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) diff > 0 ? showLbPhoto(lbIdx + 1) : showLbPhoto(lbIdx - 1);
+}, { passive: true });
+
+// ── Back to top ───────────────────────────────────────────
+const btn = document.getElementById('backToTop');
+window.addEventListener('scroll', () => { btn.style.display = window.scrollY > 400 ? 'flex' : 'none'; }, { passive: true });
+btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+// ── Cookie banner ─────────────────────────────────────────
+(function(){ if (!localStorage.getItem('agc_cookie_consent')) setTimeout(() => document.getElementById('cookieBanner').style.display = 'flex', 1500); })();
+function acceptCookies() { localStorage.setItem('agc_cookie_consent','accepted'); document.getElementById('cookieBanner').style.display='none'; }
+function declineCookies() { localStorage.setItem('agc_cookie_consent','declined'); document.getElementById('cookieBanner').style.display='none'; }
+</script>
+</body>
+</html>

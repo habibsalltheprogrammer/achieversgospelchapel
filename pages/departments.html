@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Discover your place in ministry at AGC. Explore Youth, Young Adults, Women, Men, Children, Choir, Ushering, Media, and more departments.">
+  <title>Departments & Ministries | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .tab-nav { display:flex; gap:0.5rem; flex-wrap:wrap; justify-content:center; margin-bottom:3rem; }
+    .tab-btn { padding:0.65rem 1.4rem; border-radius:50px; font-size:0.82rem; font-weight:600; letter-spacing:0.05em; background:var(--light-gray); color:var(--text-mid); border:2px solid transparent; transition:var(--transition); cursor:pointer; }
+    .tab-btn.active,.tab-btn:hover { background:var(--mauve-pale); border-color:var(--mauve); color:var(--mauve-dark); }
+    .dept-section { display:none; }
+    .dept-section.active { display:block; }
+    .dept-full { background:var(--white); border-radius:var(--radius-xl); overflow:hidden; box-shadow:var(--shadow-md); margin-bottom:2.5rem; }
+    .dept-full-hero { height:260px; background:linear-gradient(160deg,var(--mauve),var(--mauve-deep)); display:flex;align-items:center;justify-content:center;font-size:5rem;position:relative; }
+    .dept-full-hero img { width:100%;height:100%;object-fit:cover; }
+    .dept-full-body { padding:2.5rem; }
+    .dept-full-body h3 { font-size:1.7rem; margin-bottom:0.4rem; }
+    .sub-dept-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1.5rem; margin:2rem 0; }
+    .sub-dept-card { background:var(--mauve-pale); border-radius:var(--radius-lg); padding:1.8rem; text-align:center; transition:var(--transition); }
+    .sub-dept-card:hover { background:var(--mauve-light); color:var(--white); transform:translateY(-3px); }
+    .sub-dept-icon { font-size:2rem; margin-bottom:0.8rem; display:block; }
+    .sub-dept-card h4 { font-size:1rem; margin-bottom:0.4rem; }
+    .sub-dept-card p { font-size:0.82rem; }
+    .join-form { background:var(--light-gray); border-radius:var(--radius-lg); padding:2rem; margin-top:2rem; }
+    .join-form h4 { margin-bottom:1rem; font-size:1.2rem; }
+    .activities-list { list-style:none; display:flex; flex-wrap:wrap; gap:0.6rem; margin:1rem 0; }
+    .activities-list li { background:var(--mauve-pale); color:var(--mauve-dark); border-radius:50px; padding:0.3rem 0.9rem; font-size:0.8rem; font-weight:600; }
+  </style>
+  <meta property="og:title" content="Departments & Ministries | Achievers Gospel Chapel">
+  <meta property="og:description" content="Discover your place in ministry at AGC. Explore Youth, Young Adults, Women, Men, Children, Choir, Ushering, Media, and more departments.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="about.html#beliefs">What We Believe</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li><li><a href="departments.html#youth">Youth Ministry</a></li><li><a href="departments.html#women">Women's Ministry</a></li><li><a href="departments.html#men">Men's Ministry</a></li><li><a href="departments.html#children">Children's Ministry</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Departments &amp; Ministries</span></nav>
+    <h1>Departments &amp; Ministries</h1>
+    <p>Every believer has a God-given gift and a place in the body of Christ. Find yours here at Achievers Gospel Chapel.</p>
+  </div>
+</div>
+
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="auxiliary" role="tab">Auxiliary Departments</button>
+      <button class="tab-btn" data-tab="functionary" role="tab">Functionary Departments</button>
+    </div>
+
+    <!-- AUXILIARY -->
+    <div class="dept-section active" id="tab-auxiliary">
+      <!-- YOUTH -->
+      <div class="dept-full fade-up" id="youth">
+        <div class="dept-full-hero" style="position:relative;padding:0;"><img src="../assets/images/youth/01.jpg" data-cms-src="dept_img_youth" style="width:100%;height:260px;object-fit:cover;" onerror="this.style.display='none'"><span style="position:absolute;top:1rem;right:1rem;background:var(--gold);color:var(--mauve-deep);border-radius:50px;padding:0.3rem 1rem;font-size:0.78rem;font-weight:700;">Auxiliary</span></div>
+        <div class="dept-full-body">
+          <h3>Chosen Generation Youth Department</h3>
+          <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);">Department Leader: Placeholder</span>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gold-dark);font-weight:700;">⏰ Saturdays 3:00 PM – 5:00 PM | Main Sanctuary</p><p style="margin-top:0.5rem;">The Chosen Generation Youth Department is the heartbeat of Achievers Gospel Chapel's next generation ministry. A dynamic, spirit-filled community of young people who are passionate about God, creative in expression, and bold in their faith.</p>
+          <h4 style="margin-top:1.5rem;margin-bottom:0.5rem;">Sub-Departments</h4>
+          <div class="sub-dept-grid">
+            <div class="sub-dept-card"><span class="sub-dept-icon">💃</span><h4>Dance Ministry</h4><p>Expressing worship and the gospel through the art of dance and movement.</p></div>
+            <div class="sub-dept-card"><span class="sub-dept-icon">🎵</span><h4>Music Ministry</h4><p>Anointed musicians and vocalists leading the congregation in praise.</p></div>
+            <div class="sub-dept-card"><span class="sub-dept-icon">🎭</span><h4>Drama Ministry</h4><p>Communicating God's Word through powerful dramatic presentations and skits.</p></div>
+            <div class="sub-dept-card"><span class="sub-dept-icon">📜</span><h4>Poetry Ministry</h4><p>Spoken word, poetry slams, and creative writing that glorify God.</p></div>
+          </div>
+          <h4 style="margin-bottom:0.5rem;">Activities</h4>
+          <ul class="activities-list"><li>Monthly Youth Rallies</li><li>Discipleship Training</li><li>Creative Arts Showcases</li><li>Medical Outreach</li><li>Leadership Development</li><li>Annual Youth Camp</li></ul>
+          <div class="join-form">
+            <h4>Join the Youth Department</h4>
+            <form class="reg-form" novalidate><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div><div class="form-group"><label>Age</label><input type="number" name="age" placeholder="Age" min="12" max="35"></div></div><div class="form-row"><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Email address"></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div></div><div class="form-group"><label>Which sub-department interests you?</label><select name="sub_dept"><option value="">Select</option><option>Dance Ministry</option><option>Music Ministry</option><option>Drama Ministry</option><option>Poetry Ministry</option><option>General Youth</option></select></div><button type="submit" class="btn btn-mauve" data-label="Join Department">Join Department 🔥</button></form>
+            <div class="success-msg" role="alert">✅ Welcome to the Youth department!</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- YOUNG ADULTS -->
+      <div class="dept-full fade-up" id="young-adults">
+        <div class="dept-full-hero" style="position:relative;padding:0;"><img src="../assets/images/first%20sunday/01.jpg" data-cms-src="dept_img_young-adults" style="width:100%;height:260px;object-fit:cover;" onerror="this.style.display='none'"></div>
+        <div class="dept-full-body">
+          <h3>Young Adults Department</h3>
+          <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);">Department Leader: Placeholder</span>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gold-dark);font-weight:700;">⏰ Last Saturday of Month 4:00 PM | Fellowship Hall</p><p style="margin-top:0.5rem;">A vibrant community for young adults (18–35) navigating faith, career, relationships, and purpose. A space to grow deeper in God while connecting with peers who share the same values.</p>
+          <ul class="activities-list"><li>Monthly Fellowship</li><li>Career &amp; Purpose Forums</li><li>Bible Study Groups</li><li>Community Service</li><li>Social Events</li><li>Mentorship Programme</li></ul>
+          <div class="join-form"><h4>Join Young Adults</h4><form class="reg-form" novalidate><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Email address"></div></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" data-label="Join Young Adults">Join Young Adults ✨</button></form><div class="success-msg" role="alert">✅ Welcome to the Young Adults department!</div></div>
+        </div>
+      </div>
+
+      <!-- WOMEN -->
+      <div class="dept-full fade-up" id="women">
+        <div class="dept-full-hero" style="position:relative;padding:0;"><img src="../assets/images/anniversary/30.jpg" data-cms-src="dept_img_women" style="width:100%;height:260px;object-fit:cover;" onerror="this.style.display='none'"></div>
+        <div class="dept-full-body">
+          <h3>Women's Department</h3>
+          <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);">Department Leader: Placeholder</span>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gold-dark);font-weight:700;">⏰ First Sunday Monthly 12:00 PM | Main Sanctuary</p><p style="margin-top:0.5rem;">A sisterhood of women empowered by the Word of God. We build each other up, pray for one another, and support women in every season of life — from young girls to grandmothers.</p>
+          <ul class="activities-list"><li>Women's Conferences</li><li>Prayer Circles</li><li>Mentorship</li><li>Health &amp; Wellness</li><li>Counselling</li><li>Widows &amp; Single Mothers Support</li></ul>
+          <div class="join-form"><h4>Join Women's Department</h4><form class="reg-form" novalidate><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Email"></div></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" data-label="Join">Join Women's Department 💜</button></form><div class="success-msg" role="alert">✅ Welcome, Sister!</div></div>
+        </div>
+      </div>
+
+      <!-- MEN -->
+      <div class="dept-full fade-up" id="men">
+        <div class="dept-full-hero" style="position:relative;padding:0;"><img src="../assets/images/anniversary/45.jpg" data-cms-src="dept_img_men" style="width:100%;height:260px;object-fit:cover;" onerror="this.style.display='none'"></div>
+        <div class="dept-full-body">
+          <h3>Men's Department</h3>
+          <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);">Department Leader: Placeholder</span>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gold-dark);font-weight:700;">⏰ Every Saturday 7:00 AM | Prayer Room</p><p style="margin-top:0.5rem;">Raising men of God — strong in character, rooted in the Word, and committed to their families and communities. We equip men to lead with integrity, prayer, and purpose.</p>
+          <ul class="activities-list"><li>Men's Prayer Breakfasts</li><li>Leadership Training</li><li>Father &amp; Son Events</li><li>Financial Stewardship</li><li>Community Projects</li><li>Accountability Groups</li></ul>
+          <div class="join-form"><h4>Join Men's Department</h4><form class="reg-form" novalidate><div class="form-row"><div class="form-group"><label>Full Name</label><input type="text" name="name" placeholder="Your name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="Email"></div></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" data-label="Join">Join Men's Department 🛡</button></form><div class="success-msg" role="alert">✅ Welcome, Brother!</div></div>
+        </div>
+      </div>
+
+      <!-- CHILDREN -->
+      <div class="dept-full fade-up" id="children">
+        <div class="dept-full-hero" style="position:relative;padding:0;"><img src="../assets/images/youth/30.jpg" data-cms-src="dept_img_children" style="width:100%;height:260px;object-fit:cover;" onerror="this.style.display='none'"></div>
+        <div class="dept-full-body">
+          <h3>Children's Department</h3>
+          <span style="font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dark);">Department Leader: Placeholder</span>
+          <p style="margin-top:0.5rem;font-size:0.82rem;color:var(--gold-dark);font-weight:700;">⏰ Every Sunday 9:00 AM | Children's Hall</p><p style="margin-top:0.5rem;">Nurturing the faith of our youngest members. Our Children's Ministry creates a safe, fun, and spiritually enriching environment where children learn about Jesus and grow in their relationship with God.</p>
+          <ul class="activities-list"><li>Sunday School</li><li>VBS (Vacation Bible School)</li><li>Children's Choir</li><li>Bible Memorisation</li><li>Creative Arts</li><li>Children's Camps</li></ul>
+          <div class="join-form"><h4>Register Your Child</h4><form class="reg-form" novalidate><div class="form-row"><div class="form-group"><label>Child's Name</label><input type="text" name="child_name" placeholder="Child's full name" required></div><div class="form-group"><label>Age</label><input type="number" name="age" placeholder="Age" min="1" max="12"></div></div><div class="form-row"><div class="form-group"><label>Parent/Guardian Name</label><input type="text" name="name" placeholder="Parent/Guardian" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div></div><div class="form-group"><label>Parent/Guardian Email</label><input type="email" name="email" placeholder="you@email.com" required></div><button type="submit" class="btn btn-mauve" data-label="Register Child">Register Child 👶</button></form><div class="success-msg" role="alert">✅ Your child has been registered!</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUNCTIONARY -->
+    <div class="dept-section" id="tab-functionary">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;">
+        
+        <div class="dept-full" style="margin-bottom:0;" id="media">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#1a1a2e,var(--mauve-deep));font-size:3rem;position:relative;">📸<img data-cms-src="dept_img_media" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Media Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Wednesdays 5:00 PM | Studio Room</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Photography, videography, social media, and livestream ministry — spreading the gospel digitally.</p>
+            <ul class="activities-list"><li>Photography</li><li>Videography</li><li>Live Streaming</li><li>Social Media</li><li>Graphic Design</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><div class="form-group"><label>Your Skill</label><select name="skill"><option>Photography</option><option>Videography</option><option>Graphic Design</option><option>Social Media</option></select></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Media">Join Media 📸</button></form><div class="success-msg" role="alert">✅ Welcome to the Media department!</div></div>
+          </div>
+        </div>
+
+        <div class="dept-full" style="margin-bottom:0;" id="choir">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--mauve-light),var(--mauve-dark));font-size:3rem;position:relative;">🎼<img data-cms-src="dept_img_choir" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Choir Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Thursdays 6:00 PM | Sanctuary</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Spirit-filled voices lifting up praise and worship before the congregation in every service.</p>
+            <ul class="activities-list"><li>Weekly Rehearsals</li><li>Worship Teams</li><li>Choir Albums</li><li>Special Performances</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><div class="form-group"><label>Voice Type</label><select name="voice"><option>Soprano</option><option>Alto</option><option>Tenor</option><option>Bass</option></select></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Choir">Join Choir 🎼</button></form><div class="success-msg" role="alert">✅ Welcome to the Choir department!</div></div>
+          </div>
+        </div>
+
+        <div class="dept-full" style="margin-bottom:0;" id="ushering">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--gold-dark),var(--gold));font-size:3rem;position:relative;">🤝<img data-cms-src="dept_img_ushering" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Ushering Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Sundays 8:00 AM | Main Entrance</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">The welcoming face of Achievers Gospel Chapel — ensuring every visitor and member feels at home.</p>
+            <ul class="activities-list"><li>Service Coordination</li><li>Visitor Welcome</li><li>Offering Collection</li><li>Seating Management</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join">Join Ushering 🤝</button></form><div class="success-msg" role="alert">✅ Welcome to the Ushering department!</div></div>
+          </div>
+        </div>
+
+        <div class="dept-full" style="margin-bottom:0;" id="intercessory">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--mauve-deep),#6B4E6E);font-size:3rem;position:relative;">🙏<img data-cms-src="dept_img_intercessory" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Intercessory Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Fridays 6:00 AM | Prayer Room</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Prayer warriors standing in the gap — interceding for the church, city, nation, and the world.</p>
+            <ul class="activities-list"><li>Early Morning Prayers</li><li>Prayer Chains</li><li>Fasting &amp; Prayer</li><li>Prayer Requests Ministry</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join">Join Intercessory 🙏</button></form><div class="success-msg" role="alert">✅ Welcome to the Intercessory department!</div></div>
+          </div>
+        </div>
+
+        <div class="dept-full" style="margin-bottom:0;" id="evangelism">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#2d6a4f,#40916c);font-size:3rem;position:relative;">🌍<img data-cms-src="dept_img_evangelism" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Evangelism Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Saturdays 10:00 AM | Church Grounds</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Taking the gospel to the streets, hospitals, prisons, and communities of Freetown and beyond.</p>
+            <ul class="activities-list"><li>Street Evangelism</li><li>Hospital Visits</li><li>Prison Ministry</li><li>Literature Distribution</li><li>Follow-Up</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join">Join Evangelism 🌍</button></form><div class="success-msg" role="alert">✅ Welcome to the Evangelism department!</div></div>
+          </div>
+        </div>
+
+        <div class="dept-full" style="margin-bottom:0;" id="technical">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#1e3a5f,#2d6a8f);font-size:3rem;position:relative;">🎛<img data-cms-src="dept_img_technical" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Technical Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Sundays 8:30 AM | Tech Booth</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Sound, lighting, projection, and technical operations ensuring every service runs smoothly.</p>
+            <ul class="activities-list"><li>Sound Engineering</li><li>Lighting</li><li>Projection</li><li>Live Stream Tech</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;"><form class="reg-form" novalidate><div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div><div class="form-group"><label>Technical Skill</label><select name="skill"><option>Sound</option><option>Lighting</option><option>Projection/Visuals</option><option>IT/Computers</option></select></div><button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join">Join Technical 🎛</button></form><div class="success-msg" role="alert">✅ Welcome to the Technical department!</div></div>
+          </div>
+        </div>
+
+
+        <!-- CHORAL ASSEMBLY (replaces Security) -->
+        <div class="dept-full" style="margin-bottom:0;" id="choral-assembly">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#4a235a,#7d3c98);font-size:3rem;position:relative;">🎵<img data-cms-src="dept_img_choral-assembly" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Choral Assembly</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Saturdays 6:30 PM | Sanctuary</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">A dedicated ensemble of voices committed to excellence in choral worship — Alto, Soprano, Bass, and Tenor voices working in harmony for the glory of God.</p>
+            <ul class="activities-list"><li>Alto Section</li><li>Soprano Section</li><li>Bass Section</li><li>Tenor Section</li><li>Choral Performances</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Voice Type</label>
+                  <select name="role">
+                    <option value="">Select your voice type</option>
+                    <option>Soprano — High female voice</option>
+                    <option>Alto — Low female voice</option>
+                    <option>Tenor — High male voice</option>
+                    <option>Bass — Low male voice</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Choral Assembly">Join Choral Assembly 🎵</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Choral Assembly!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INSTRUMENT -->
+        <div class="dept-full" style="margin-bottom:0;" id="instrument">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--mauve),var(--mauve-dark));font-size:3rem;position:relative;">🎷<img data-cms-src="dept_img_instrument" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Instrument Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Thursdays 6:00 PM | Music Room</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Instrumentalists who accompany worship — guitars, keyboards, drums, brass, and more.</p>
+            <ul class="activities-list"><li>Guitar</li><li>Keyboard</li><li>Drums</li><li>Bass Guitar</li><li>Brass & Wind</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Your Instrument</label>
+                  <select name="role">
+                    <option value="">Select your instrument</option>
+                    <option>Guitar — Acoustic/Electric</option>
+                    <option>Keyboard / Piano</option>
+                    <option>Drums / Percussion</option>
+                    <option>Bass Guitar</option>
+                    <option>Trumpet / Brass</option>
+                    <option>Saxophone / Wind</option>
+                    <option>Other Instrument</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Instrument">Join Instrument 🎷</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Instrument Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROTOCOL -->
+        <div class="dept-full" style="margin-bottom:0;" id="protocol">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#6b3fa0,#9b59b6);font-size:3rem;position:relative;">🛐<img data-cms-src="dept_img_protocol" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Protocol Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Sundays 8:00 AM | Main Hall</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Managing church order, VIP guests, and official protocols at all church functions with excellence.</p>
+            <ul class="activities-list"><li>VIP Management</li><li>Church Order</li><li>Event Protocol</li><li>Guest Management</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Role of Interest</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>VIP Guest Coordinator</option>
+                    <option>Church Order Officer</option>
+                    <option>Event Protocol Manager</option>
+                    <option>Guest Relations Officer</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Protocol">Join Protocol 🛐</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Protocol Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WELFARE -->
+        <div class="dept-full" style="margin-bottom:0;" id="welfare">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#d35400,#e67e22);font-size:3rem;position:relative;">❤️<img data-cms-src="dept_img_welfare" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Welfare Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ As Needed | Welfare Office</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Caring for the physical and material needs of members and families in difficult circumstances.</p>
+            <ul class="activities-list"><li>Food Support</li><li>Financial Aid</li><li>Hospital Visits</li><li>Bereavement Support</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>How Can You Help?</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>Food & Supplies Distribution</option>
+                    <option>Hospital & Home Visitation</option>
+                    <option>Financial Aid Coordinator</option>
+                    <option>Bereavement Support</option>
+                    <option>General Volunteer</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Welfare">Join Welfare ❤️</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Welfare Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HOSPITALITY -->
+        <div class="dept-full" style="margin-bottom:0;" id="hospitality">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#27ae60,#2ecc71);font-size:3rem;position:relative;">🍽<img data-cms-src="dept_img_hospitality" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Hospitality Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Sundays & Events | Fellowship Hall</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Creating a warm and welcoming atmosphere at all church events, services, and programmes.</p>
+            <ul class="activities-list"><li>Catering</li><li>Guest Welcome</li><li>Event Setup</li><li>Refreshments</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Role of Interest</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>Catering & Food Preparation</option>
+                    <option>Guest Welcome & Reception</option>
+                    <option>Event Setup & Decoration</option>
+                    <option>Refreshments Coordinator</option>
+                    <option>General Hospitality Volunteer</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Hospitality">Join Hospitality 🍽</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Hospitality Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FINANCE -->
+        <div class="dept-full" style="margin-bottom:0;" id="finance">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--gold-dark),var(--gold));font-size:3rem;position:relative;">💰<img data-cms-src="dept_img_finance" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Finance Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ As Scheduled | Finance Office</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Stewardship of church resources — budgeting, accounting, and financial transparency for the glory of God.</p>
+            <ul class="activities-list"><li>Budgeting</li><li>Accounting</li><li>Offering Management</li><li>Financial Reporting</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Role of Interest</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>Accountant / Bookkeeper</option>
+                    <option>Offering Counter</option>
+                    <option>Budget Coordinator</option>
+                    <option>Financial Auditor</option>
+                    <option>General Finance Volunteer</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Finance">Join Finance 💰</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Finance Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COUNSELLING -->
+        <div class="dept-full" style="margin-bottom:0;" id="counselling">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,var(--mauve-deep),#6B4E6E);font-size:3rem;position:relative;">💆<img data-cms-src="dept_img_counselling" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Counselling Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ By Appointment | Counselling Room</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Providing confidential pastoral counselling, marriage guidance, and life coaching rooted in God's Word.</p>
+            <ul class="activities-list"><li>Pastoral Counselling</li><li>Marriage Counselling</li><li>Youth Counselling</li><li>Grief Support</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Area of Ministry</label>
+                  <select name="role">
+                    <option value="">Select an area</option>
+                    <option>Pastoral Counsellor</option>
+                    <option>Marriage & Family Counsellor</option>
+                    <option>Youth Counsellor</option>
+                    <option>Grief & Bereavement Counsellor</option>
+                    <option>General Counselling Volunteer</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Counselling">Join Counselling 💆</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Counselling Department!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUNDAY SCHOOL -->
+        <div class="dept-full" style="margin-bottom:0;" id="sunday-school">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#8e44ad,#9b59b6);font-size:3rem;position:relative;">📚<img data-cms-src="dept_img_sunday-school" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Sunday School</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Sundays 8:30 AM | Classrooms</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Systematic Bible teaching for all ages every Sunday morning — building disciples grounded in the Word.</p>
+            <ul class="activities-list"><li>Children's Class</li><li>Youth Class</li><li>Adults Class</li><li>Teacher Training</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Role of Interest</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>Sunday School Teacher — Children</option>
+                    <option>Sunday School Teacher — Youth</option>
+                    <option>Sunday School Teacher — Adults</option>
+                    <option>Class Assistant / Helper</option>
+                    <option>Curriculum Coordinator</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Sunday School">Join Sunday School 📚</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to Sunday School!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOLLOW-UP -->
+        <div class="dept-full" style="margin-bottom:0;" id="follow-up">
+          <div class="dept-full-hero" style="height:160px;background:linear-gradient(160deg,#2980b9,#3498db);font-size:3rem;position:relative;">📞<img data-cms-src="dept_img_follow-up" data-cms-reveal alt="" style="display:none;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" onerror="this.style.display='none'"></div>
+          <div class="dept-full-body" style="padding:1.8rem;">
+            <h3 style="font-size:1.3rem;">Follow-Up Department</h3>
+            <p style="font-size:0.82rem;color:var(--gold-dark);font-weight:700;margin:0.3rem 0 0.5rem;">⏰ Weekdays | Phone & Visits</p>
+            <p style="font-size:0.88rem;margin:0.5rem 0 1rem;">Reaching out to visitors and new converts to ensure they are discipled and integrated into the church family.</p>
+            <ul class="activities-list"><li>New Visitor Follow-Up</li><li>New Convert Discipleship</li><li>Phone Ministry</li><li>Home Visits</li></ul>
+            <div class="join-form" style="padding:1.2rem;margin-top:1rem;">
+              <form class="reg-form" novalidate>
+                <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name" required></div><div class="form-group"><label>Email</label><input type="email" name="email" placeholder="you@email.com" required></div>
+                <div class="form-group"><label>Role of Interest</label>
+                  <select name="role">
+                    <option value="">Select a role</option>
+                    <option>Visitor Follow-Up Officer</option>
+                    <option>New Convert Discipler</option>
+                    <option>Phone Ministry Volunteer</option>
+                    <option>Home Visitation Officer</option>
+                    <option>Data & Records Coordinator</option>
+                  </select>
+                </div>
+                <div class="form-group"><label>Phone</label><input type="tel" name="phone" placeholder="+232..."></div>
+                <button type="submit" class="btn btn-mauve" style="font-size:0.82rem;padding:0.65rem 1.5rem;" data-label="Join Follow-Up">Join Follow-Up 📞</button>
+              </form>
+              <div class="success-msg" role="alert">✅ Welcome to the Follow-Up Department!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOLUNTEER CTA -->
+<section style="background:linear-gradient(160deg,var(--mauve-deep),var(--mauve-dark));padding:4rem 0;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <span class="section-label">Get Involved</span>
+    <h2 style="color:var(--white);margin-bottom:0.75rem;">Can't Find Your Department?</h2>
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:2rem;">We welcome volunteers across all areas. Tell us your gift and we'll find the perfect place for you to serve.</p>
+    <a href="contact.html" class="btn btn-primary">Register as Volunteer</a>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand"><div class="logo-wrap"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div><h3>Achievers Gospel Chapel</h3><p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p></div></div><p>Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith.</p><p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p></div>
+      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="../index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="leadership.html">Leadership</a></li><li><a href="departments.html">Ministries</a></li><li><a href="sermons.html">Sermons</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Service Times</h4><ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul></div>
+      <div class="footer-col"><h4>Address</h4><p style="font-size:0.88rem;line-height:1.9;"><span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span></p></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 Achievers Gospel Chapel. All rights reserved.</p><div class="social-links"><a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a></div></div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+  // Tab switching
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.dept-section').forEach(s => s.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+  // Anchor navigation
+  const hash = window.location.hash.slice(1);
+  if (['media','choir','ushering','intercessory','evangelism','technical'].includes(hash)) {
+    document.querySelectorAll('.tab-btn')[1].click();
+  }
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Watch and listen to powerful sermons from Achievers Gospel Chapel on YouTube and Facebook. Be inspired and built up in your faith.">
+  <title>Sermons | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .sermon-filters { display:flex; gap:0.8rem; flex-wrap:wrap; align-items:center; margin-bottom:2.5rem; }
+    .filter-btn { padding:0.5rem 1.2rem; border-radius:50px; font-size:0.8rem; font-weight:600; background:var(--light-gray); color:var(--text-mid); border:2px solid transparent; cursor:pointer; transition:var(--transition); }
+    .filter-btn.active,.filter-btn:hover { background:var(--mauve-pale); border-color:var(--mauve); color:var(--mauve-dark); }
+    .search-bar { flex:1; min-width:220px; display:flex; gap:0.5rem; }
+    .search-bar input { flex:1; padding:0.6rem 1rem; border:1.5px solid var(--light-gray); border-radius:50px; font-size:0.88rem; outline:none; transition:var(--transition-fast); }
+    .search-bar input:focus { border-color:var(--mauve); }
+    .sermons-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:2rem; }
+    .sermon-card { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); transition:var(--transition); }
+    .sermon-card:hover { transform:translateY(-4px); box-shadow:var(--shadow-md); }
+    .sermon-thumb { height:180px; background:linear-gradient(160deg,var(--mauve),var(--mauve-deep)); display:flex;align-items:center;justify-content:center;position:relative; }
+    .sermon-thumb .play-btn { width:56px;height:56px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;backdrop-filter:blur(4px);transition:var(--transition);cursor:pointer;border:2px solid rgba(255,255,255,0.4); }
+    .sermon-thumb .play-btn:hover { background:var(--gold);color:var(--mauve-deep);border-color:var(--gold); }
+    .sermon-type-badge { position:absolute;top:0.8rem;right:0.8rem;background:var(--gold);color:var(--mauve-deep);border-radius:50px;padding:0.25rem 0.7rem;font-size:0.7rem;font-weight:700;text-transform:uppercase; }
+    .sermon-body { padding:1.5rem; }
+    .sermon-body h4 { font-size:1.05rem;margin-bottom:0.4rem; }
+    .sermon-meta { display:flex;gap:1rem;font-size:0.75rem;color:var(--text-light);margin-bottom:0.8rem; }
+    .sermon-scripture { font-family:var(--ff-display);font-style:italic;font-size:0.9rem;color:var(--mauve);border-left:3px solid var(--gold);padding-left:0.8rem;margin:0.8rem 0; }
+    .sermon-actions { display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:1rem; }
+    .sermon-actions a { font-size:0.78rem;padding:0.45rem 1rem;border-radius:50px; }
+    .series-section { background:var(--mauve-pale);border-radius:var(--radius-xl);padding:2.5rem;margin-bottom:3rem; }
+    .series-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:1.5rem; }
+    .series-card { background:var(--white);border-radius:var(--radius-lg);padding:1.5rem;box-shadow:var(--shadow-sm);text-align:center;transition:var(--transition);cursor:pointer; }
+    .series-card:hover { background:var(--mauve-pale);transform:translateY(-3px); }
+    .series-icon { font-size:2.5rem;margin-bottom:0.8rem;display:block; }
+    .series-card h4 { font-size:1rem;margin-bottom:0.3rem; }
+    .series-card p { font-size:0.78rem;color:var(--text-light); }
+  </style>
+  <meta property="og:title" content="Sermons | Achievers Gospel Chapel">
+  <meta property="og:description" content="Watch and listen to powerful sermons from Achievers Gospel Chapel on YouTube and Facebook. Be inspired and built up in your faith.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Sermons</span></nav>
+    <h1>Sermons & Messages</h1>
+    <p>Feed your spirit with anointed, Word-based messages from Achievers Gospel Chapel. Listen, watch, and download.</p>
+  </div>
+</div>
+
+<section style="background:var(--off-white);">
+  <div class="container">
+    </div>
+
+    <!-- FILTERS -->
+    <div class="sermon-filters fade-up">
+      <button class="filter-btn active" data-type="all">All</button>
+      <button class="filter-btn" data-type="video">Video</button>
+      <button class="filter-btn" data-type="audio">Audio</button>
+      <button class="filter-btn" data-type="notes">Notes</button>
+      <div class="search-bar">
+        <input type="search" id="sermonSearch" placeholder="Search sermons, scriptures, topics…" aria-label="Search sermons">
+      </div>
+    </div>
+
+    <!-- SERMONS GRID -->
+    <div class="sermons-grid">
+
+      <article class="sermon-card fade-up" data-type="video">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,var(--mauve-deep),#6B4E6E);">
+          <div class="play-btn">▶</div>
+          <span class="sermon-type-badge">Video</span>
+        </div>
+        <div class="sermon-body">
+          <h4>You Are More Than a Conqueror</h4>
+          <div class="sermon-meta"><span>📅 15 Jun 2025</span><span>👤 Rev. Eustace Samuels</span></div>
+          <blockquote class="sermon-scripture">Romans 8:37 — "Nay, in all these things we are more than conquerors through him that loved us."</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sermon-card fade-up" data-type="audio">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,var(--gold-dark),var(--gold));">
+          <div class="play-btn" style="color:var(--mauve-deep);">🎵</div>
+          <span class="sermon-type-badge">Audio</span>
+        </div>
+        <div class="sermon-body">
+          <h4>The Power of the Spoken Word</h4>
+          <div class="sermon-meta"><span>📅 8 Jun 2025</span><span>👤 Rev. Mrs. Eustace Samuels</span></div>
+          <blockquote class="sermon-scripture">Proverbs 18:21 — "Death and life are in the power of the tongue."</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sermon-card fade-up" data-type="video">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,#1a5276,#2980b9);">
+          <div class="play-btn">▶</div>
+          <span class="sermon-type-badge">Video</span>
+        </div>
+        <div class="sermon-body">
+          <h4>Standing Firm in the Last Days</h4>
+          <div class="sermon-meta"><span>📅 1 Jun 2025</span><span>👤 Rev. Eustace Samuels</span></div>
+          <blockquote class="sermon-scripture">2 Timothy 4:7 — "I have fought a good fight, I have finished my course, I have kept the faith."</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sermon-card fade-up" data-type="notes">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,var(--mauve),var(--mauve-dark));">
+          <div class="play-btn">📄</div>
+          <span class="sermon-type-badge">Notes</span>
+        </div>
+        <div class="sermon-body">
+          <h4>Walking in Your God-Given Destiny</h4>
+          <div class="sermon-meta"><span>📅 25 May 2025</span><span>👤 Guest Minister</span></div>
+          <blockquote class="sermon-scripture">Jeremiah 29:11 — "For I know the plans I have for you, declares the Lord…"</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sermon-card fade-up" data-type="audio">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,#145a32,#27ae60);">
+          <div class="play-btn" style="color:var(--white);">🎵</div>
+          <span class="sermon-type-badge">Audio</span>
+        </div>
+        <div class="sermon-body">
+          <h4>The Healing Virtue of Jesus</h4>
+          <div class="sermon-meta"><span>📅 18 May 2025</span><span>👤 Rev. Eustace Samuels</span></div>
+          <blockquote class="sermon-scripture">Mark 5:34 — "Daughter, thy faith hath made thee whole; go in peace."</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="sermon-card fade-up" data-type="video">
+        <div class="sermon-thumb" style="background:linear-gradient(160deg,#6c3483,#9b59b6);">
+          <div class="play-btn">▶</div>
+          <span class="sermon-type-badge">Video</span>
+        </div>
+        <div class="sermon-body">
+          <h4>Building a Life That Lasts</h4>
+          <div class="sermon-meta"><span>📅 11 May 2025</span><span>👤 Rev. Mrs. Eustace Samuels</span></div>
+          <blockquote class="sermon-scripture">Matthew 7:24 — "Whosoever heareth these sayings of mine, and doeth them…"</blockquote>
+          <div class="sermon-actions">
+            <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="btn btn-mauve" style="font-size:0.78rem;padding:0.45rem 1rem;">▶ YouTube</a>
+            <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:0.45rem 1rem;border-color:var(--mauve);color:var(--mauve);">f Facebook</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="text-center mt-2" style="padding-bottom:1rem;">
+      <button class="btn btn-mauve" onclick="alert('More sermons will load from the database once the API is connected.')">Load More Sermons</button>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE CTA -->
+<section style="background:linear-gradient(160deg,var(--mauve-deep),var(--mauve-dark));padding:4rem 0;text-align:center;">
+  <div class="container" style="max-width:600px;">
+    <span class="section-label">Never Miss a Message</span>
+    <h2 style="color:var(--white);margin-bottom:0.75rem;">Subscribe to Our Sermon Updates</h2>
+    <p style="color:rgba(255,255,255,0.8);margin-bottom:2rem;">Get notified whenever a new sermon is uploaded. Stay fed, stay growing.</p>
+    <form id="newsletterForm" style="display:flex;gap:0.75rem;flex-wrap:wrap;justify-content:center;">
+      <input type="email" name="email" placeholder="Your email address" style="flex:1;min-width:240px;padding:0.9rem 1.2rem;border:none;border-radius:50px;font-size:0.92rem;outline:none;" required>
+      <button type="submit" class="btn btn-primary">Subscribe ✉</button>
+    </form>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const type = btn.dataset.type;
+      document.querySelectorAll('.sermon-card').forEach(card => {
+        card.style.display = (type === 'all' || card.dataset.type === type) ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

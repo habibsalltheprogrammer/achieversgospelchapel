@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /config/
+Disallow: /services/
+
+Sitemap: https://habibsalltheprogrammer.github.io/achieversgospelchapel/sitemap.xml

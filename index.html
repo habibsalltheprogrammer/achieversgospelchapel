@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Welcome to Achievers Gospel Chapel, Freetown — a Spirit-filled church liberating souls, equipping the saints, and standing steadfast in faith. Join us every Sunday 9AM.">
+  <meta name="keywords" content="Achievers Gospel Chapel, Church Freetown, Sierra Leone Church, Gospel, Worship, Ministry">
+  <meta property="og:title" content="Achievers Gospel Chapel — More Than Conquerors">
+  <meta property="og:description" content="Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith">
+  <meta property="og:type" content="website">
+  <title>Achievers Gospel Chapel | More Than Conquerors — Freetown, Sierra Leone</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="assets/images/church-logo.jpeg" type="image/jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ════════════════════════════════════════ -->
+<nav id="navbar" role="navigation" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="Achievers Gospel Chapel Home">
+      <img src="assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel Logo">
+     
+    </a>
+    <ul class="nav-links" id="navLinks" role="menubar">
+      <li role="none"><a href="index.html" role="menuitem">Home</a></li>
+      <li class="nav-dropdown" role="none">
+        <a href="pages/about.html" role="menuitem">About</a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="pages/about.html#history" role="menuitem">Our History</a></li>
+          <li><a href="pages/about.html#beliefs" role="menuitem">What We Believe</a></li>
+          <li><a href="pages/leadership.html" role="menuitem">Leadership</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="pages/departments.html" role="menuitem">Ministries</a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="pages/departments.html" role="menuitem">All Departments</a></li>
+          <li><a href="pages/departments.html#youth" role="menuitem">Youth Ministry</a></li>
+          <li><a href="pages/departments.html#women" role="menuitem">Women's Ministry</a></li>
+          <li><a href="pages/departments.html#men" role="menuitem">Men's Ministry</a></li>
+          <li><a href="pages/departments.html#children" role="menuitem">Children's Ministry</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown" role="none">
+        <a href="pages/programs.html" role="menuitem">Programs</a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="pages/programs.html#medical" role="menuitem">Medical Outreach</a></li>
+          <li><a href="pages/programs.html#intimacy" role="menuitem">Intimacy Worship</a></li>
+          <li><a href="pages/programs.html#ecclesiastes" role="menuitem">Ecclesiastes</a></li>
+        </ul>
+      </li>
+      <li role="none"><a href="pages/sermons.html" role="menuitem">Sermons</a></li>
+      <li role="none"><a href="pages/events.html" role="menuitem">Events</a></li>
+      <li role="none"><a href="pages/gallery.html" role="menuitem">Gallery</a></li>
+      <li role="none"><a href="pages/testimonies.html" role="menuitem">Testimonies</a></li>
+      <li role="none"><a href="pages/missions.html" role="menuitem">Missions</a></li>
+      <li role="none"><a href="pages/academy.html" role="menuitem">Academy</a></li>
+      <li role="none"><a href="pages/contact.html" role="menuitem" class="nav-cta">ContactUs</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══ HERO ══════════════════════════════════════════════ -->
+<section class="hero" aria-label="Welcome to Achievers Gospel Chapel" id="hero">
+  <!-- Real church building photo -->
+  <div class="hero-bg" style="background-image:url('assets/images/church-building.png');background-size:cover;background-position:center top;opacity:1;" role="presentation"></div>
+
+  <!-- Cinematic layered overlay: dark vignette + mauve tint -->
+  <div class="hero-overlay" style="
+    background:
+      linear-gradient(to bottom,
+        rgba(30,10,35,0.72) 0%,
+        rgba(74,45,78,0.55) 35%,
+        rgba(30,10,35,0.80) 75%,
+        rgba(20,5,25,0.96) 100%),
+      radial-gradient(ellipse at 50% 40%, rgba(74,45,78,0.25) 0%, transparent 70%);
+  " role="presentation"></div>
+
+  <!-- Gold shimmer rays -->
+  <div style="position:absolute;inset:0;pointer-events:none;overflow:hidden;" role="presentation">
+    <div style="position:absolute;top:-20%;left:50%;transform:translateX(-50%);width:800px;height:800px;background:radial-gradient(ellipse,rgba(201,168,76,0.18) 0%,transparent 65%);"></div>
+    <div style="position:absolute;bottom:0;left:0;right:0;height:300px;background:linear-gradient(to top,rgba(20,5,25,0.98),transparent);"></div>
+  </div>
+
+  <!-- Floating particles -->
+  <canvas id="heroParticles" style="position:absolute;inset:0;pointer-events:none;opacity:0.5;" role="presentation"></canvas>
+
+  <div class="hero-content container" style="padding-top:calc(var(--nav-h) + 2rem);padding-bottom:5rem;">
+
+    <!-- Top row: logo + location pill -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:1.2rem;margin-bottom:2rem;animation:fadeInDown 0.8s ease both;">
+      <img src="assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel Logo"
+        style="width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);box-shadow:0 0 0 6px rgba(201,168,76,0.2),0 8px 32px rgba(0,0,0,0.5);">
+      <span class="hero-badge">
+        <span style="display:inline-block;width:8px;height:8px;background:#4ade80;border-radius:50%;margin-right:0.4rem;animation:pulse 2s infinite;"></span>
+        <span data-cms-key="hero_location">📍 27 Davies Street Kissy Shell Old Road Freetown, Sierra Leone</span>
+      </span>
+    </div>
+
+    <!-- Main headline -->
+    <h1 style="font-size:clamp(2.4rem,6vw,5rem);text-shadow:0 4px 24px rgba(0,0,0,0.6);animation:fadeInUp 0.9s ease 0.25s both;">
+<span data-cms-key="hero_title_prefix">Welcome to</span><br><span class="accent" style="font-style:italic;background:linear-gradient(135deg,var(--gold-light),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;" data-cms-key="hero_title_accent">Achievers Gospel Chapel</span>
+    </h1>
+
+    <!-- Motto ribbon -->
+    <div style="display:inline-block;background:linear-gradient(135deg,rgba(201,168,76,0.18),rgba(201,168,76,0.08));border:1px solid rgba(201,168,76,0.45);border-radius:50px;padding:0.5rem 1.8rem;margin:0.8rem 0 1.2rem;animation:fadeInUp 0.9s ease 0.4s both;">
+      <p class="hero-tagline" style="margin:0;font-size:1.1rem;letter-spacing:0.06em;">✦ <span data-cms-key="hero_subtitle">More Than Conquerors — Through Him That Loved Us</span> ✦</p>
+    </div>
+
+    <p class="hero-verse" style="animation:fadeInUp 0.9s ease 0.55s both;font-size:1rem;">
+      "<span data-cms-key="hero_verse">For I am persuaded, that neither death, nor life… shall be able to separate us from the love of God.</span>"<br>
+      <strong style="color:var(--gold-light);font-style:normal;font-family:var(--ff-body);font-size:0.82rem;letter-spacing:0.1em;text-transform:uppercase;">— <span data-cms-key="hero_verse_ref">Romans 8:38–39</span></strong>
+    </p>
+
+    <div class="hero-buttons" style="animation:fadeInUp 0.9s ease 0.7s both;margin-top:2rem;">
+      <a href="pages/visit.html" class="btn btn-primary" style="font-size:0.95rem;padding:1rem 2.2rem;letter-spacing:0.04em;" data-cms-href="hero_btn1_link"><span data-cms-key="hero_btn1_text">✨ Plan Your Visit</span></a>
+      <a href="pages/sermons.html" class="btn btn-secondary" style="font-size:0.95rem;padding:1rem 2.2rem;" data-cms-href="hero_btn2_link"><span data-cms-key="hero_btn2_text">▶ Watch Sermons</span></a>
+      <a href="pages/contact.html" class="btn btn-secondary" style="font-size:0.95rem;padding:1rem 2.2rem;" data-cms-href="hero_btn3_link"><span data-cms-key="hero_btn3_text">✉ Contact Us</span></a>
+    </div>
+
+    <!-- Live service badge -->
+    <div style="margin-top:2.5rem;animation:fadeInUp 0.9s ease 0.85s both;">
+      <span style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:50px;padding:0.45rem 1.2rem;font-size:0.8rem;color:rgba(255,255,255,0.75);backdrop-filter:blur(8px);">🕊 Sunday Worship 9:00 AM &nbsp;|&nbsp; 📖 Bible Study (Tue) 6:00 PM &nbsp;|&nbsp; 🙏 Gethsemane Hour (Wed) 11:00 AM &nbsp;|&nbsp; 🔥 Achievers Hour (1st &amp; 2nd Thu) 6:30 PM
+      </span>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="hero-scroll" aria-hidden="true">Scroll</div>
+
+  <!-- Floating church building caption -->
+  <div style="position:absolute;bottom:5rem;right:2rem;background:rgba(0,0,0,0.55);border:1px solid rgba(201,168,76,0.3);border-radius:var(--radius-md);padding:0.6rem 1rem;backdrop-filter:blur(8px);max-width:200px;display:none;" id="buildingCaption">
+    <p style="color:var(--gold-light);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.2rem;">Our Sanctuary</p>
+    <p style="color:rgba(255,255,255,0.8);font-size:0.78rem;line-height:1.5;">27 Davies Street, Kissy Shell Old Road, Freetown</p>
+  </div>
+</section>
+
+<!-- ═══ WELCOME ════════════════════════════════════════════ -->
+<section class="welcome-section" aria-labelledby="welcome-heading">
+  <div class="container">
+    <div class="welcome-inner">
+      <div class="welcome-image fade-up">
+        <img src="assets/images/church-building.png" alt="Achievers Gospel Chapel Building — 27 Davies Street, Kissy Shell Old Road, Freetown" style="width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:var(--radius-xl);">
+        <div class="gold-badge">
+          <span class="num" style="font-size:1rem;">AGC</span>
+          <span class="lbl">Freetown, SL</span>
+        </div>
+      </div>
+      <div class="welcome-text fade-up">
+        <span class="section-label" data-cms-key="welcome_label">Welcome Home</span>
+        <h2 id="welcome-heading" data-cms-key="welcome_heading">A Ministry That Transforms Lives</h2>
+        <div class="divider left"></div>
+        <p data-cms-key="welcome_para1">Achievers Gospel Chapel is a ministry that preaches the gospel of Jesus Christ to all — healing the broken hearted, delivering the captives, recovering of sight to the blind, and setting at liberty those that are bruised.</p>
+        <p style="margin-top:1rem;" data-cms-key="welcome_para2">We are a community rooted in love, prayer, and the Word of God. Located in the heart of Freetown, Sierra Leone, we welcome all who are searching for a spiritual home.</p>
+        <div class="mvv-grid">
+          <div class="mvv-card fade-up">
+            <h4>🎯 Our Mission</h4>
+            <p data-cms-key="mission_text">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith</p>
+          </div>
+          <div class="mvv-card fade-up">
+            <h4>🌟 Our Vision</h4>
+            <p data-cms-key="vision_text">Building Lives And Shaping Destinies</p>
+          </div>
+          <div class="mvv-card full fade-up">
+            <h4>💎 Core Values</h4>
+            <p data-cms-key="corevalues_text">Faith • Love • Prayer • Unity • Service • Excellence • Integrity • Diligience</p>
+          </div>
+        </div>
+        <a href="pages/about.html" class="btn btn-mauve mt-2">Discover Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICE TIMES ══════════════════════════════════════ -->
+<section class="services-section" aria-labelledby="services-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Join Us</span>
+      <h2 class="section-title" id="services-heading">Service Times</h2>
+      <p class="section-subtitle">Come worship with us. All are welcome — bring your family, friends, and neighbours.</p>
+    </div>
+    <div class="service-cards">
+      <div class="service-card fade-up">
+        <div class="service-icon">🕊</div>
+        <h4>Sunday Worship</h4>
+        <div class="service-time" data-cms-key="service_sunday" data-cms-strip-label>9:00 AM</div>
+        <div class="service-day">Every Sunday</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">📖</div>
+        <h4>Bible Study</h4>
+        <div class="service-time" data-cms-key="service_tuesday" data-cms-strip-label>6:00 PM</div>
+        <div class="service-day">Tuesdays</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🙏</div>
+        <h4>Gethsemane Hour</h4>
+        <div class="service-time" data-cms-key="service_wednesday" data-cms-strip-label>11:00 AM</div>
+        <div class="service-day">Wednesdays</div>
+      </div>
+      <div class="service-card fade-up">
+        <div class="service-icon">🔥</div>
+        <h4>Achievers Hour</h4>
+        <div class="service-time" data-cms-key="service_thursday" data-cms-strip-label>6:30 PM</div>
+        <div class="service-day">1st &amp; 2nd Thursdays</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MEET PASTORS ═══════════════════════════════════════ -->
+<section class="pastors-section" aria-labelledby="pastors-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Leadership</span>
+      <h2 class="section-title" id="pastors-heading">Meet Our Senior Pastors</h2>
+      <p class="section-subtitle">Spirit-filled leaders committed to shepherding the flock of God with love, wisdom, and integrity.</p>
+    </div>
+    <div class="pastor-cards">
+      <article class="pastor-card fade-up">
+        <div class="pastor-img-placeholder" style="padding:0;overflow:hidden;">
+          <img src="assets/images/pastor-eustace.jpg" alt="Rev. Eustace Samuels" style="width:100%;height:100%;object-fit:cover;display:block;" data-cms-src="pastor1_image">
+        </div>
+        <div class="pastor-info">
+          <h3 data-cms-key="pastor1_name">Rev. Eustace Samuels</h3>
+          <p class="pastor-role" data-cms-key="pastor1_role">Senior Pastor & Founder</p>
+          <p data-cms-key="pastor1_bio">A devoted servant of God, Rev. Eustace Samuels leads Achievers Gospel Chapel with an uncompromising passion for souls and an unwavering commitment to the Word of God. His ministry is marked by prayer, power, and purpose.</p>
+          <a href="pages/leadership.html" class="btn btn-outline mt-1" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Read More</a>
+        </div>
+      </article>
+      <article class="pastor-card fade-up">
+        <div class="pastor-img-placeholder" style="padding:0;overflow:hidden;">
+          <img src="assets/images/pastor-victoria.jpg" alt="Rev . (Mrs) Victoria Samuels" style="width:100%;height:100%;object-fit:cover;display:block;" data-cms-src="pastor2_image">
+        </div>
+        <div class="pastor-info">
+          <h3 data-cms-key="pastor2_name">Rev . (Mrs) Victoria Samuels</h3>
+          <p class="pastor-role" data-cms-key="pastor2_role">Co-Senior Pastor & First Lady</p>
+          <p data-cms-key="pastor2_bio">A woman of grace and spiritual depth, Rev . (Mrs) Victoria Samuels co-leads the ministry with a heart for women, families, and community transformation. Her teaching and mentorship have impacted countless lives across Sierra Leone.</p>
+          <a href="pages/leadership.html" class="btn btn-outline mt-1" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Read More</a>
+        </div>
+      </article>
+    </div>
+    <div class="text-center mt-2">
+      <a href="pages/leadership.html" class="btn btn-mauve">View Full Leadership Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ UPCOMING EVENTS ════════════════════════════════════ -->
+<section class="events-section" aria-labelledby="events-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">What's Happening</span>
+      <h2 class="section-title" id="events-heading">Upcoming Events</h2>
+      <p class="section-subtitle">Stay connected with the life of the church. Mark your calendar and join us!</p>
+    </div>
+    <div class="events-grid">
+      <article class="event-card fade-up">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(160deg,var(--mauve),var(--mauve-dark));display:flex;align-items:center;justify-content:center;font-size:3.5rem;">🙌</div>
+          <div class="event-date-badge">July 6<br>2025</div>
+        </div>
+        <div class="event-body">
+          <h4>Intimacy Worship Night</h4>
+          <p>A powerful night of deep worship and encounter with God. Come with an open heart.</p>
+          <div class="event-meta">
+            <span>⏰ 7:00 PM</span>
+            <span>📍 Main Sanctuary</span>
+          </div>
+          <a href="pages/events.html" class="btn btn-mauve" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Register</a>
+        </div>
+      </article>
+      <article class="event-card fade-up">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(160deg,var(--gold-dark),var(--gold));display:flex;align-items:center;justify-content:center;font-size:3.5rem;">🏥</div>
+          <div class="event-date-badge">Aug 2<br>2025</div>
+        </div>
+        <div class="event-body">
+          <h4>Medical Outreach Programme</h4>
+          <p>Free medical care and health screenings for the Kissy Shell Old Road community.</p>
+          <div class="event-meta">
+            <span>⏰ 9:00 AM</span>
+            <span>📍 Church Grounds</span>
+          </div>
+          <a href="pages/events.html" class="btn btn-mauve" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Register</a>
+        </div>
+      </article>
+      <article class="event-card fade-up">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(160deg,var(--mauve-deep),var(--mauve));display:flex;align-items:center;justify-content:center;font-size:3.5rem;">📜</div>
+          <div class="event-date-badge">Aug 16<br>2025</div>
+        </div>
+        <div class="event-body">
+          <h4>Ecclesiastes — Spoken Word Night</h4>
+          <p>An evening of poetry, drama, and artistic expression in worship. Featuring Vince The Poet.</p>
+          <div class="event-meta">
+            <span>⏰ 6:30 PM</span>
+            <span>📍 Fellowship Hall</span>
+          </div>
+          <a href="pages/events.html" class="btn btn-mauve" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Register</a>
+        </div>
+      </article>
+    </div>
+    <div class="text-center mt-2">
+      <a href="pages/events.html" class="btn btn-outline">View All Events</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PROGRAMS ═══════════════════════════════════════════ -->
+<section class="programs-section" aria-labelledby="programs-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Church Programs</span>
+      <h2 class="section-title" id="programs-heading">Our Signature Ministries</h2>
+      <p class="section-subtitle">Three powerful programmes that are transforming lives across Freetown and beyond.</p>
+    </div>
+    <div class="programs-grid">
+      <article class="program-card fade-up">
+        <div class="program-img">
+          <div class="program-img-ph">🏥</div>
+          <div class="program-overlay"></div>
+          <span class="program-tag">Outreach</span>
+          <div class="program-info">
+            <h3>Medical Outreach</h3>
+            <p>Free healthcare for the community — bringing healing body and soul.</p>
+            <a href="pages/programs.html#medical" class="btn btn-primary" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Learn More</a>
+          </div>
+        </div>
+      </article>
+      <article class="program-card fade-up">
+        <div class="program-img">
+          <div class="program-img-ph">🎶</div>
+          <div class="program-overlay"></div>
+          <span class="program-tag">Worship</span>
+          <div class="program-info">
+            <h3>Intimacy Worship</h3>
+            <p>A deep worship experience centred on fellowship and communion with God.</p>
+            <a href="pages/programs.html#intimacy" class="btn btn-primary" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Learn More</a>
+          </div>
+        </div>
+      </article>
+      <article class="program-card fade-up">
+        <div class="program-img">
+          <div class="program-img-ph">📜</div>
+          <div class="program-overlay"></div>
+          <span class="program-tag">Arts</span>
+          <div class="program-info">
+            <h3>Ecclesiastes</h3>
+            <p>Where art meets the gospel — spoken word, poetry, and creative expression.</p>
+            <a href="pages/programs.html#ecclesiastes" class="btn btn-primary" style="font-size:0.82rem;padding:0.6rem 1.4rem;">Learn More</a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ACHIEVERS ROYAL ACADEMY ═══════════════════════════ -->
+<section aria-labelledby="academy-heading" style="background:linear-gradient(160deg,var(--mauve-deep),var(--mauve-dark));">
+  <div class="container" style="text-align:center;color:var(--white);padding:3.5rem 1.5rem;">
+    <div style="font-size:2.8rem;margin-bottom:0.8rem;">🎓</div>
+    <h2 id="academy-heading" style="color:var(--gold-light);font-size:clamp(1.6rem,4vw,2.4rem);margin-bottom:0.6rem;" data-cms-key="academy_name">Achievers Royal Academy</h2>
+    <p style="color:rgba(255,255,255,0.85);max-width:600px;margin:0 auto 1.8rem;" data-cms-key="academy_tagline">Nurturing Minds, Building Character, Raising Achievers — a Christian school of Achievers Gospel Chapel.</p>
+    <a href="pages/academy.html" class="btn btn-primary" style="font-size:0.9rem;padding:0.85rem 2rem;">Learn More About Our School →</a>
+  </div>
+</section>
+
+<!-- ═══ DEPARTMENTS ════════════════════════════════════════ -->
+<section class="departments-section" aria-labelledby="depts-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Get Involved</span>
+      <h2 class="section-title" id="depts-heading">Our Departments</h2>
+      <p class="section-subtitle">Find your place and serve. Every believer has a role in the body of Christ.</p>
+    </div>
+    <div class="dept-grid">
+      <a href="pages/departments.html#youth" class="dept-card fade-up">
+        <span class="dept-icon">🔥</span>
+        <h4>Chosen Generation Youth</h4>
+        <p>Dance · Music · Drama · Poetry</p>
+      </a>
+      <a href="pages/departments.html#young-adults" class="dept-card fade-up">
+        <span class="dept-icon">✨</span>
+        <h4>Young Adults</h4>
+        <p>Growing together in faith</p>
+      </a>
+      <a href="pages/departments.html#women" class="dept-card fade-up">
+        <span class="dept-icon">💜</span>
+        <h4>Women's Department</h4>
+        <p>Women empowered by the Word</p>
+      </a>
+      <a href="pages/departments.html#men" class="dept-card fade-up">
+        <span class="dept-icon">🛡</span>
+        <h4>Men's Department</h4>
+        <p>Men of integrity and purpose</p>
+      </a>
+      <a href="pages/departments.html#children" class="dept-card fade-up">
+        <span class="dept-icon">👶</span>
+        <h4>Children's Ministry</h4>
+        <p>Nurturing faith from the start</p>
+      </a>
+      <a href="pages/departments.html#choir" class="dept-card fade-up">
+        <span class="dept-icon">🎼</span>
+        <h4>Choir</h4>
+        <p>Lifting voices in praise</p>
+      </a>
+      <a href="pages/departments.html#media" class="dept-card fade-up">
+        <span class="dept-icon">📸</span>
+        <h4>Media Department</h4>
+        <p>Spreading the gospel digitally</p>
+      </a>
+      <a href="pages/departments.html#intercessory" class="dept-card fade-up">
+        <span class="dept-icon">🙏</span>
+        <h4>Intercessory</h4>
+        <p>Standing in the gap for others</p>
+      </a>
+      <a href="pages/departments.html#evangelism" class="dept-card fade-up">
+        <span class="dept-icon">🌍</span>
+        <h4>Evangelism</h4>
+        <p>Reaching the lost for Christ</p>
+      </a>
+      <a href="pages/departments.html" class="dept-card fade-up" style="background:var(--mauve-pale);">
+        <span class="dept-icon">➕</span>
+        <h4>View All</h4>
+        <p>Explore all 15+ departments</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══════════════════════════════════════ -->
+<section class="testimonials-section" aria-labelledby="testimonials-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">God Is Faithful</span>
+      <h2 class="section-title" id="testimonials-heading">Testimonies of Grace</h2>
+      <p class="section-subtitle">Hear what God is doing in the lives of our members. His mercies are new every morning.</p>
+    </div>
+    <div class="testimonials-grid">
+      <article class="testimonial-card fade-up">
+        <div class="quote-icon">"</div>
+        <p>I came to Achievers Gospel Chapel broken and hopeless. Through the prayers of the brethren and the anointed teaching of Pastor Samuels, God restored my marriage and gave me a new beginning. I am forever grateful!</p>
+        <div class="testimony-author">
+          <div class="author-avatar">S</div>
+          <div class="author-info">
+            <div class="name">Sister Sandra M.</div>
+            <div class="category">🌿 Restoration Testimony</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card fade-up">
+        <div class="quote-icon">"</div>
+        <p>I was diagnosed with a chronic illness and doctors gave me little hope. After receiving prayer at our Friday morning prayer meeting, I went back for tests and the condition had completely disappeared. God healed me!</p>
+        <div class="testimony-author">
+          <div class="author-avatar">B</div>
+          <div class="author-info">
+            <div class="name">Bro. Emmanuel K.</div>
+            <div class="category">🏥 Healing Testimony</div>
+          </div>
+        </div>
+      </article>
+      <article class="testimonial-card fade-up">
+        <div class="quote-icon">"</div>
+        <p>I was lost in sin for years until a friend invited me to Achievers Gospel Chapel. The love I encountered here and the power of the Word changed me completely. I gave my life to Christ and have never looked back!</p>
+        <div class="testimony-author">
+          <div class="author-avatar">F</div>
+          <div class="author-info">
+            <div class="name">Fatmata J.</div>
+            <div class="category">✝️ Salvation Testimony</div>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="text-center mt-2">
+      <a href="pages/testimonies.html" class="btn btn-secondary">Share Your Testimony</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRAYER REQUEST ═════════════════════════════════════ -->
+<section class="prayer-section" aria-labelledby="prayer-heading">
+  <div class="container">
+    <div class="prayer-inner">
+      <div class="prayer-text fade-up">
+        <span class="section-label">We Pray With You</span>
+        <h2 id="prayer-heading">Submit Your Prayer Request</h2>
+        <div class="divider left"></div>
+        <p>Our intercessory team prays over every request received. You are not alone — we stand in agreement with you in faith, believing God for your miracle.</p>
+        <blockquote class="prayer-verse">
+          "Therefore confess your sins to each other and pray for each other so that you may be healed. The prayer of a righteous person is powerful and effective."
+          <cite>— James 5:16</cite>
+        </blockquote>
+        <p style="margin-top:1rem;">All prayer requests are handled with the utmost confidentiality and care.</p>
+      </div>
+      <div class="form-card fade-up">
+        <h3>Prayer Request Form</h3>
+        <p>Share your heart with us. We believe in the power of prayer.</p>
+        <form id="prayerForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prayer-name">Your Name</label>
+              <input type="text" id="prayer-name" name="name" placeholder="Full name" required>
+            </div>
+            <div class="form-group">
+              <label for="prayer-email">Email Address</label>
+              <input type="email" id="prayer-email" name="email" placeholder="you@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="prayer-type">Prayer Category</label>
+            <select id="prayer-type" name="category">
+              <option value="">Select category</option>
+              <option>Healing</option>
+              <option>Finances &amp; Provision</option>
+              <option>Family &amp; Relationships</option>
+              <option>Salvation of a loved one</option>
+              <option>Employment &amp; Career</option>
+              <option>Peace &amp; Mental Health</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="prayer-request">Your Prayer Request</label>
+            <textarea id="prayer-request" name="request" placeholder="Share your prayer request here…" required></textarea>
+          </div>
+          <div class="form-group" style="display:flex;align-items:center;gap:0.6rem;">
+            <input type="checkbox" id="prayer-anonymous" name="anonymous" style="width:auto;padding:0;">
+            <label for="prayer-anonymous" style="margin:0;font-size:0.88rem;">Keep my request anonymous</label>
+          </div>
+          <button type="submit" class="btn btn-mauve" style="width:100%;">🙏 Submit Prayer Request</button>
+          <div id="prayerMsg" class="success-msg" role="alert"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ NEWSLETTER ═════════════════════════════════════════ -->
+<section class="newsletter-section" aria-labelledby="newsletter-heading">
+  <div class="newsletter-inner">
+    <h2 id="newsletter-heading">Stay Connected</h2>
+    <p>Subscribe to our newsletter for sermons, events, devotionals, and church updates delivered straight to your inbox.</p>
+    <form class="newsletter-form" id="newsletterForm" novalidate>
+      <input type="email" name="email" placeholder="Enter your email address" required aria-label="Email address">
+      <button type="submit" class="btn">Subscribe ✉</button>
+    </form>
+  </div>
+</section>
+
+<!-- ═══ GALLERY PREVIEW ════════════════════════════════════ -->
+<section class="gallery-section" aria-labelledby="gallery-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-label">Church Life</span>
+      <h2 class="section-title" id="gallery-heading">Gallery</h2>
+      <p class="section-subtitle">Glimpses of worship, fellowship, outreach, and community at Achievers Gospel Chapel.</p>
+    </div>
+    <div style="
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      grid-template-rows:200px 200px;
+      gap:0.7rem;
+      border-radius:16px;
+      overflow:hidden;
+    ">
+      <!-- Large feature photo — spans 2 cols 2 rows -->
+      <a href="pages/gallery.html" style="grid-column:span 2;grid-row:span 2;display:block;overflow:hidden;position:relative;border-radius:12px;">
+        <img src="assets/images/anniversary/05.jpg" alt="AGC Anniversary" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,10,45,0.6),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:1rem;" class="gh-ov">
+          <span style="color:#fff;font-size:0.78rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">10th Anniversary</span>
+        </div>
+      </a>
+      <!-- 4 smaller photos -->
+      <a href="pages/gallery.html" style="grid-column:span 2;display:block;overflow:hidden;position:relative;border-radius:12px;">
+        <img src="assets/images/youth/03.jpg" alt="Youth Programs" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,10,45,0.6),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:0.8rem;" class="gh-ov">
+          <span style="color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">Youth Programs</span>
+        </div>
+      </a>
+      <a href="pages/gallery.html" style="grid-column:span 2;display:block;overflow:hidden;position:relative;border-radius:12px;">
+        <img src="assets/images/anniversary/20.jpg" alt="AGC Event" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,10,45,0.6),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:0.8rem;" class="gh-ov">
+          <span style="color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">Church Life</span>
+        </div>
+      </a>
+      <a href="pages/gallery.html" style="grid-column:span 2;display:block;overflow:hidden;position:relative;border-radius:12px;">
+        <img src="assets/images/youngadult/08.jpg" alt="Young Adult Thanksgiving" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,10,45,0.6),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:0.8rem;" class="gh-ov">
+          <span style="color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">Thanksgiving</span>
+        </div>
+      </a>
+      <a href="pages/gallery.html" style="grid-column:span 2;display:block;overflow:hidden;position:relative;border-radius:12px;">
+        <img src="assets/images/first%20sunday/10.jpg" alt="First Sunday Service" loading="lazy" style="width:100%;height:100%;object-fit:cover;transition:transform 0.5s ease;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(45,10,45,0.6),transparent);opacity:0;transition:opacity 0.3s;display:flex;align-items:flex-end;padding:0.8rem;" class="gh-ov">
+          <span style="color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;">First Sunday</span>
+        </div>
+      </a>
+    </div>
+    <style>
+      /* Hover zoom on gallery photos */
+      .gallery-section a:hover img { transform: scale(1.07); }
+      .gallery-section a:hover .gh-ov { opacity: 1 !important; }
+      @media (max-width: 768px) {
+        .gallery-section [style*="grid-template-columns:repeat(6"] {
+          grid-template-columns: repeat(2,1fr) !important;
+          grid-template-rows: auto !important;
+          height: auto !important;
+        }
+        .gallery-section [style*="grid-column:span 2;grid-row:span 2"] {
+          grid-column: span 2 !important;
+          grid-row: span 1 !important;
+          height: 200px;
+        }
+        .gallery-section [style*="grid-column:span 2;display"] {
+          grid-column: span 1 !important;
+          height: 140px;
+        }
+      }
+      @media (max-width: 480px) {
+        .gallery-section [style*="grid-template-columns:repeat(6"] {
+          grid-template-columns: repeat(2,1fr) !important;
+        }
+      }
+    </style>
+    <div class="text-center mt-2">
+      <a href="pages/gallery.html" class="btn btn-mauve">View Full Gallery</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACT SNIPPET ════════════════════════════════════ -->
+<section class="contact-section" aria-labelledby="contact-heading">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info fade-up">
+        <span class="section-label">Find Us</span>
+        <h3 id="contact-heading">Get In Touch</h3>
+        <div class="divider left"></div>
+        <div class="contact-detail">
+          <div class="contact-icon">📍</div>
+          <div class="contact-detail-text">
+            <div class="label">Address</div>
+            <div class="value">27 Davies Street, Kissy Shell Old Road,<br>Freetown, Sierra Leone</div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <div class="contact-detail-text">
+            <div class="label">Phone</div>
+            <div class="value"><a href="tel:+23276618024" style="color:var(--mauve);">+232 76 618024</a></div>
+          </div>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉</div>
+          <div class="contact-detail-text">
+            <div class="label">Email</div>
+            <div class="value"><a href="mailto:achieversgospelchurch@gmail.com" style="color:var(--mauve);">achieversgospelchurch@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                    <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+          <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+        </div>
+        <div style="border-radius:12px;overflow:hidden;">
+          <iframe
+            src="https://www.google.com/maps?q=27+Davies+Street,+Kissy+Shell+Old+Road,+Freetown,+Sierra+Leone&output=embed"
+            width="100%"
+            height="320"
+            style="border:0;display:block;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Achievers Gospel Chapel Location">
+          </iframe>
+        </div>
+          <p>Embedded Google Map<br><small>Configure with your Google Maps API key</small></p>
+        </div>
+      </div>
+      <div class="form-card fade-up">
+        <h3>Send Us a Message</h3>
+        <p>We'd love to hear from you. Our team will respond within 24 hours.</p>
+        <form id="contactForm" action="https://formspree.io/f/xykqdwow" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name">Full Name *</label>
+              <input type="text" id="c-name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="c-email">Email *</label>
+              <input type="email" id="c-email" name="email" placeholder="you@email.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Phone Number</label>
+            <input type="tel" id="c-phone" name="phone" placeholder="+232 XX XXX XXX">
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject</label>
+            <select id="c-subject" name="subject">
+              <option value="">Select a topic</option>
+              <option>General Enquiry</option>
+              <option>Plan a Visit</option>
+              <option>Ministry Partnership</option>
+              <option>Prayer Request</option>
+              <option>Media &amp; Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Message *</label>
+            <textarea id="c-message" name="message" placeholder="How can we help you?" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-mauve" style="width:100%;">Send Message ✉</button>
+          <div id="contactMsg" class="success-msg" role="alert">✅ Message sent successfully! We'll be in touch soon.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═════════════════════════════════════════════ -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="pages/about.html">About Us</a></li>
+          <li><a href="pages/leadership.html">Leadership</a></li>
+          <li><a href="pages/departments.html">Ministries</a></li>
+          <li><a href="pages/programs.html">Programs</a></li>
+          <li><a href="pages/sermons.html">Sermons</a></li>
+          <li><a href="pages/missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="pages/contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+        <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="js/supabase-client.js" defer></script>
+<script src="js/site-content.js" defer></script>
+<script src="js/main.js" defer></script>
+<script>
+// ─── Hero Particle Canvas ───────────────────────────────────
+(function(){
+  const canvas = document.getElementById('heroParticles');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize();
+  window.addEventListener('resize', resize);
+
+  const particles = Array.from({length: 55}, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.8 + 0.4,
+    dx: (Math.random() - 0.5) * 0.35,
+    dy: -(Math.random() * 0.5 + 0.15),
+    alpha: Math.random() * 0.6 + 0.2,
+    color: Math.random() > 0.6
+      ? `rgba(201,168,76,`
+      : `rgba(255,255,255,`
+  }));
+
+  function draw(){
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color + p.alpha + ')';
+      ctx.fill();
+      p.x += p.dx; p.y += p.dy;
+      p.alpha -= 0.0012;
+      if (p.alpha <= 0 || p.y < -10) {
+        p.x = Math.random() * canvas.width;
+        p.y = canvas.height + 5;
+        p.alpha = Math.random() * 0.6 + 0.2;
+      }
+    });
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // Show building caption after 2s
+  setTimeout(() => {
+    const cap = document.getElementById('buildingCaption');
+    if (cap) { cap.style.display = 'block'; cap.style.animation = 'fadeInUp 0.6s ease both'; }
+  }, 2000);
+})();
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

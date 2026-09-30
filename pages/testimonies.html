@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Read and share testimonies of God's faithfulness at Achievers Gospel Chapel. He is still performing miracles today!">
+  <title>Testimonies | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <link rel="icon" href="../assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    .testimony-full { background:var(--white);border-radius:var(--radius-xl);padding:2.5rem;box-shadow:var(--shadow-md);margin-bottom:2rem;position:relative;overflow:hidden; }
+    .testimony-full::before { content:'"';position:absolute;top:-0.5rem;right:1.5rem;font-family:var(--ff-display);font-size:8rem;color:var(--mauve-pale);line-height:1;pointer-events:none; }
+    .testimony-full .category-badge { display:inline-block;background:var(--mauve-pale);color:var(--mauve-dark);border-radius:50px;padding:0.3rem 0.9rem;font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1rem; }
+    .testimony-full blockquote { font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--text-dark);line-height:1.8;margin-bottom:1.5rem;position:relative;z-index:1; }
+    .testimony-full .author { display:flex;align-items:center;gap:1rem; }
+    .testimony-full .author .avatar { width:52px;height:52px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--mauve-light));display:flex;align-items:center;justify-content:center;font-family:var(--ff-display);font-size:1.3rem;font-weight:700;color:var(--white);flex-shrink:0; }
+    .testimony-full .author .info .name { font-weight:700;font-size:1rem;color:var(--mauve-deep); }
+    .testimony-full .author .info .date { font-size:0.78rem;color:var(--text-light); }
+    .cat-filter { display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:3rem; }
+    .submit-section { background:linear-gradient(160deg,var(--mauve-deep),var(--mauve-dark));border-radius:var(--radius-xl);padding:3rem;color:var(--white); }
+    .submit-section h2 { color:var(--white);margin-bottom:0.5rem; }
+    .submit-section p { color:rgba(255,255,255,0.8);margin-bottom:2rem; }
+    .submit-section .form-group input,
+    .submit-section .form-group textarea,
+    .submit-section .form-group select { background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.25);color:var(--white); }
+    .submit-section .form-group input::placeholder,
+    .submit-section .form-group textarea::placeholder { color:rgba(255,255,255,0.5); }
+    .submit-section .form-group label { color:rgba(255,255,255,0.85); }
+    .submit-section .form-group input:focus,
+    .submit-section .form-group textarea:focus { border-color:var(--gold-light);box-shadow:0 0 0 3px rgba(201,168,76,0.2); }
+  </style>
+  <meta property="og:title" content="Testimonies | Achievers Gospel Chapel">
+  <meta property="og:description" content="Read and share testimonies of God's faithfulness at Achievers Gospel Chapel. He is still performing miracles today!">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="../assets/images/church-logo.jpeg">
+  <meta name="theme-color" content="#2D0A2D">
+  <link rel="apple-touch-icon" href="../assets/images/church-logo.jpeg">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" defer></script>
+</head>
+<body>
+<nav id="navbar" role="navigation">
+  <div class="nav-inner">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel"><div class="nav-logo-text"><span class="name">Achievers Gospel Chapel</span><span class="tagline">More Than Conquerors</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li class="nav-dropdown"><a href="about.html">About</a><ul class="dropdown-menu"><li><a href="about.html#history">Our History</a></li><li><a href="leadership.html">Leadership</a></li></ul></li>
+      <li class="nav-dropdown"><a href="departments.html">Ministries</a><ul class="dropdown-menu"><li><a href="departments.html">All Departments</a></li></ul></li>
+      <li class="nav-dropdown"><a href="programs.html">Programs</a><ul class="dropdown-menu"><li><a href="programs.html#medical">Medical Outreach</a></li><li><a href="programs.html#intimacy">Intimacy Worship</a></li><li><a href="programs.html#ecclesiastes">Ecclesiastes</a></li></ul></li>
+      <li><a href="sermons.html">Sermons</a></li><li><a href="events.html">Events</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="testimonies.html">Testimonies</a></li><li><a href="missions.html">Missions</a></li>
+      <li><a href="academy.html">Academy</a></li><li><a href="contact.html" class="nav-cta">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <nav class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Testimonies</span></nav>
+    <h1>Testimonies of His Grace</h1>
+    <p>Every testimony is a monument to God's faithfulness. Read what the Lord has done and be encouraged in your own walk of faith.</p>
+  </div>
+</div>
+
+<section style="background:var(--off-white);">
+  <div class="container">
+    <div class="cat-filter">
+      <button class="cat-btn active" data-cat="all">All Testimonies</button>
+      <button class="cat-btn" data-cat="salvation">✝️ Salvation</button>
+      <button class="cat-btn" data-cat="healing">🏥 Healing</button>
+      <button class="cat-btn" data-cat="breakthrough">💫 Breakthrough</button>
+      <button class="cat-btn" data-cat="restoration">🌿 Restoration</button>
+    </div>
+
+    <div id="testimoniesContainer">
+      <!-- SALVATION -->
+      <div class="testimony-full fade-up" data-cat="salvation">
+        <span class="category-badge">✝️ Salvation</span>
+        <blockquote>I had been living in darkness for years — addiction, broken relationships, no hope. A friend invited me to Achievers Gospel Chapel one Sunday and I sat at the back, arms crossed, ready to leave early. But when Pastor Samuels began to preach, I felt something I had never felt before. I gave my life to Christ that day and have not looked back since. My family is restored, I am free from addiction, and I have found my purpose in God.</blockquote>
+        <div class="author"><div class="avatar">F</div><div class="info"><div class="name">Fatmata J.</div><div class="date">March 2025</div></div></div>
+      </div>
+
+      <div class="testimony-full fade-up" data-cat="salvation">
+        <span class="category-badge">✝️ Salvation</span>
+        <blockquote>I grew up in a Muslim home and never thought I would ever become a Christian. But through the outreach programme of Achievers Gospel Chapel and the love shown to me by the members, I encountered Jesus in a real way. I gave my life to Christ six months ago and the transformation in my life has been undeniable. My family is slowly seeing the change and I believe God is working in their hearts too.</blockquote>
+        <div class="author"><div class="avatar">M</div><div class="info"><div class="name">Mohammed K.</div><div class="date">January 2025</div></div></div>
+      </div>
+
+      <!-- HEALING -->
+      <div class="testimony-full fade-up" data-cat="healing">
+        <span class="category-badge">🏥 Healing</span>
+        <blockquote>I was diagnosed with a tumour and given only months to live. My family was devastated. But the intercessory team at Achievers Gospel Chapel stood with us in prayer, fasting, and faith. I went back to the hospital after six weeks of intensive prayer and the doctors could not find the tumour. They ran multiple tests, all confirming — it was gone! God completely healed me and I am standing here today as a living testimony of His miracle power.</blockquote>
+        <div class="author"><div class="avatar">E</div><div class="info"><div class="name">Emmanuel S.</div><div class="date">April 2025</div></div></div>
+      </div>
+
+      <div class="testimony-full fade-up" data-cat="healing">
+        <span class="category-badge">🏥 Healing</span>
+        <blockquote>My daughter was born with a serious eye condition. Doctors said surgery would be needed and even then, her sight would be severely limited. During the Medical Outreach programme, she received prayer from the church's intercessory team. When we returned to the specialist two weeks later, he was shocked — her condition had significantly improved and surgery was no longer necessary. We give all the glory to God!</blockquote>
+        <div class="author"><div class="avatar">A</div><div class="info"><div class="name">Aminata D.</div><div class="date">May 2025</div></div></div>
+      </div>
+
+      <!-- BREAKTHROUGH -->
+      <div class="testimony-full fade-up" data-cat="breakthrough">
+        <span class="category-badge">💫 Breakthrough</span>
+        <blockquote>I had been unemployed for three years despite sending countless applications. I was about to give up on my dreams. The Bible Study series on "Walking in Your God-Given Destiny" renewed my faith and I began to pray specifically and boldly. Within two weeks of completing the series, I received three job offers. I accepted the one God confirmed in my heart. I am now thriving in a career that aligns perfectly with my calling and gifts.</blockquote>
+        <div class="author"><div class="avatar">J</div><div class="info"><div class="name">James T.</div><div class="date">February 2025</div></div></div>
+      </div>
+
+      <div class="testimony-full fade-up" data-cat="breakthrough">
+        <span class="category-badge">💫 Breakthrough</span>
+        <blockquote>My business was failing and I was deeply in debt. I came to church desperate and broken. Through the teaching on financial stewardship and the prayers of the Men's Department, God began to turn things around. Within six months, my business not only recovered but exceeded its previous revenue by 40%. I tithe faithfully now and God has been faithful in return. I am a witness that God is still in the miracle business!</blockquote>
+        <div class="author"><div class="avatar">P</div><div class="info"><div class="name">Pastor Peter A.</div><div class="date">March 2025</div></div></div>
+      </div>
+
+      <!-- RESTORATION -->
+      <div class="testimony-full fade-up" data-cat="restoration">
+        <span class="category-badge">🌿 Restoration</span>
+        <blockquote>My marriage was on the brink of divorce. We had stopped communicating and were living like strangers in the same house. Through the marriage counselling ministry at Achievers Gospel Chapel and the Word of God, my husband and I found our way back to each other. We recently celebrated our 12th anniversary and our marriage is stronger and more beautiful than ever. God restores what the enemy tries to destroy!</blockquote>
+        <div class="author"><div class="avatar">S</div><div class="info"><div class="name">Sandra M.</div><div class="date">June 2025</div></div></div>
+      </div>
+    </div>
+
+    <!-- SUBMIT TESTIMONY -->
+    <div class="submit-section fade-up" style="margin-top:4rem;">
+      <div class="grid-2" style="align-items:center;gap:3rem;">
+        <div>
+          <span class="section-label">Your Story Matters</span>
+          <h2>Share Your Testimony</h2>
+          <p>Your testimony could be the breakthrough someone else needs to believe. Don't keep it to yourself — share what God has done in your life and let His glory be known!</p>
+          <blockquote style="font-family:var(--ff-display);font-style:italic;font-size:1.1rem;color:var(--gold-light);border-left:3px solid var(--gold);padding-left:1.2rem;margin-top:1.5rem;">"And they overcame him by the blood of the Lamb, and by the word of their testimony." — Revelation 12:11</blockquote>
+        </div>
+        <div>
+          <form id="testimonyForm" class="reg-form" novalidate>
+            <div class="form-row">
+              <div class="form-group"><label>Your Name</label><input type="text" name="name" placeholder="Full name (or Anonymous)" required></div>
+              <div class="form-group"><label>Category</label><select name="category"><option>Salvation</option><option>Healing</option><option>Breakthrough</option><option>Restoration</option><option>Other</option></select></div>
+            </div>
+            <div class="form-group"><label>Your Testimony</label><textarea name="testimony" placeholder="Share what God has done in your life…" style="min-height:140px;" required></textarea></div>
+            <div class="form-group" style="display:flex;align-items:center;gap:0.6rem;"><input type="checkbox" id="testimony-consent" name="consent" style="width:auto;padding:0;" required><label for="testimony-consent" style="margin:0;font-size:0.85rem;color:rgba(255,255,255,0.85);">I consent to my testimony being shared on this website and in church communications.</label></div>
+            <button type="submit" class="btn btn-primary" style="width:100%;" data-label="Submit Testimony">Submit My Testimony 🙏</button>
+          </form>
+          <div class="success-msg" role="alert" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:var(--white);">✅ Thank you! Your testimony has been received and will be reviewed before publishing.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <img src="../assets/images/church-logo.jpeg" alt="Achievers Gospel Chapel">
+          <div>
+            <h3>Achievers Gospel Chapel</h3>
+            <p style="font-size:0.75rem;color:var(--gold-light);margin:0;">More Than Conquerors</p>
+          </div>
+        </div>
+        <p><span data-cms-key="footer_about">Liberating Souls, Equipping The Saints And Standing Steadfast In The Faith. A house of prayer for all people in Freetown, Sierra Leone.</span></p>
+        <p style="font-size:0.82rem;">📞 <a href="tel:+23276618024" style="color:var(--gold-light);"><span data-cms-key="footer_phone">+232 76 618024</span></a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="departments.html">Ministries</a></li>
+          <li><a href="programs.html">Programs</a></li>
+          <li><a href="sermons.html">Sermons</a></li>
+          <li><a href="missions.html">Missions &amp; Outreach</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Service Times</h4>
+                <ul class="footer-service-list">
+          <li><span class="day">Sunday Worship</span><span class="time">9:00 AM</span></li>
+          <li><span class="day">Bible Study (Tue)</span><span class="time">6:00 PM</span></li>
+          <li><span class="day">Gethsemane Hour (Wed)</span><span class="time">11:00 AM</span></li>
+          <li><span class="day">Achievers Hour (1st &amp; 2nd Thu)</span><span class="time">6:30 PM</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Address</h4>
+        <p style="font-size:0.88rem;line-height:1.9;">
+          <span data-cms-key="footer_address" data-cms-html>27 Davies Street,<br>Kissy Shell Old Road,<br>Freetown, Sierra Leone</span>
+        </p>
+        <p style="margin-top:1rem;font-size:0.88rem;">
+          <a href="mailto:<span data-cms-key="footer_email">achieversgospelchurch@gmail.com</span>" style="color:rgba(255,255,255,0.7);">achieversgospelchurch@gmail.com</a>
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p><span data-cms-key="footer_copyright">© 2025 Achievers Gospel Chapel. All rights reserved. | Freetown, Sierra Leone</span></p>
+      <div class="social-links">
+        <a href="https://www.facebook.com/share/1EEkoiSduW/?mibextid=wwXIfr" target="_blank" rel="noopener" class="social-link social-facebook" aria-label="Facebook" title="Facebook" style="background:#1877F2;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://youtube.com/@achieversgospelchapel2025?si=jYcYNscKFqYEXUWN" target="_blank" rel="noopener" class="social-link social-youtube" aria-label="YouTube" title="YouTube" style="background:#FF0000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        <a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="social-link social-whatsapp" aria-label="WhatsApp" title="WhatsApp" style="background:#25D366;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg></a>
+          <a href="https://www.tiktok.com/@achievers.gospel.chapel?_r=1&amp;_t=ZS-97gDU2GvxTh" target="_blank" rel="noopener" class="social-link social-tiktok" aria-label="TikTok" title="TikTok" style="background:#000000;border:none;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="white"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+<script src="../js/supabase-client.js" defer></script>
+<script src="../js/site-content.js" defer></script>
+<script src="../js/main.js" defer></script>
+<script>
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('[data-cat]').forEach(item => {
+        if (!item.closest('.cat-filter')) {
+          item.style.display = (cat === 'all' || item.dataset.cat === cat) ? '' : 'none';
+        }
+      });
+    });
+  });
+</script>
+
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/23276618024" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp" title="Chat with us on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="white" width="30" height="30">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.833.737 5.489 2.027 7.8L0 32l8.437-2.007A15.938 15.938 0 0016 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.267 13.267 0 01-6.747-1.84l-.483-.287-4.997 1.19 1.23-4.87-.317-.5A13.267 13.267 0 012.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.927c-.397-.2-2.35-1.16-2.714-1.29-.363-.134-.627-.2-.89.2-.264.397-1.02 1.29-1.25 1.557-.23.264-.46.297-.857.1-.397-.2-1.677-.617-3.193-1.97-1.18-1.053-1.977-2.353-2.207-2.75-.23-.397-.024-.61.173-.807.178-.177.397-.463.596-.694.2-.23.264-.397.397-.66.133-.264.066-.497-.034-.697-.1-.2-.89-2.147-1.22-2.94-.32-.77-.647-.667-.89-.68l-.757-.013c-.264 0-.693.1-1.057.497-.363.397-1.387 1.356-1.387 3.303 0 1.947 1.42 3.827 1.617 4.09.2.264 2.793 4.263 6.767 5.98.947.41 1.687.653 2.263.837.95.3 1.817.257 2.5.156.763-.113 2.35-.96 2.683-1.887.333-.927.333-1.72.233-1.887-.1-.166-.363-.266-.76-.463z"/>
+  </svg>
+  <span class="wa-tooltip">Chat with us!</span>
+</a>
+<style>
+  .wa-float {
+    position: fixed;
+    bottom: 2rem;
+    right: 1.8rem;
+    z-index: 8888;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: waPulse 2.5s infinite;
+  }
+  .wa-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    animation: none;
+  }
+  .wa-tooltip {
+    position: absolute;
+    right: 68px;
+    background: #25D366;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 0.4rem 0.85rem;
+    border-radius: 50px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  }
+  .wa-float:hover .wa-tooltip { opacity: 1; }
+  @keyframes waPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+    70%  { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  }
+</style>
+
+<!-- Back to Top Button -->
+<button id="backToTop" aria-label="Back to top" title="Back to top" style="
+  position:fixed;bottom:5.5rem;right:1.8rem;z-index:8887;
+  width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--mauve-deep,#4a1a4a),var(--gold,#c9a84c));
+  color:#fff;font-size:1.2rem;border:none;cursor:pointer;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+  display:none;align-items:center;justify-content:center;
+  transition:transform 0.2s,opacity 0.3s;">▲</button>
+<script>
+(function(){
+  const btn = document.getElementById('backToTop');
+  window.addEventListener('scroll',()=>{
+    btn.style.display = window.scrollY>400?'flex':'none';
+  },{passive:true});
+  btn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  btn.addEventListener('mouseenter',()=>btn.style.transform='scale(1.15)');
+  btn.addEventListener('mouseleave',()=>btn.style.transform='scale(1)');
+})();
+</script>
+
+<!-- Cookie / Privacy Notice -->
+<div id="cookieBanner" style="
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:9990;
+  background:rgba(30,10,30,0.97);color:#fff;
+  padding:1rem 1.5rem;display:flex;flex-wrap:wrap;
+  align-items:center;justify-content:space-between;gap:1rem;
+  backdrop-filter:blur(8px);border-top:2px solid var(--gold,#c9a84c);">
+  <p style="margin:0;font-size:0.82rem;flex:1;min-width:220px;">
+    🍪 This website uses contact forms powered by Formspree to receive your messages. 
+    By submitting a form you agree to your data being processed as described in our 
+    <a href="contact.html" style="color:var(--gold,#c9a84c);text-decoration:underline;">privacy policy</a>.
+  </p>
+  <div style="display:flex;gap:0.8rem;flex-shrink:0;">
+    <button onclick="acceptCookies()" style="
+      background:linear-gradient(135deg,var(--gold-dark,#a07830),var(--gold,#c9a84c));
+      color:#fff;border:none;border-radius:50px;padding:0.5rem 1.4rem;
+      font-size:0.82rem;font-weight:700;cursor:pointer;">Accept</button>
+    <button onclick="declineCookies()" style="
+      background:transparent;color:rgba(255,255,255,0.6);border:1px solid rgba(255,255,255,0.3);
+      border-radius:50px;padding:0.5rem 1.2rem;font-size:0.82rem;cursor:pointer;">Decline</button>
+  </div>
+</div>
+<script>
+(function(){
+  function showBanner(){
+    if(!localStorage.getItem('agc_cookie_consent')){
+      document.getElementById('cookieBanner').style.display='flex';
+    }
+  }
+  setTimeout(showBanner,1500);
+})();
+function acceptCookies(){
+  localStorage.setItem('agc_cookie_consent','accepted');
+  document.getElementById('cookieBanner').style.display='none';
+}
+function declineCookies(){
+  localStorage.setItem('agc_cookie_consent','declined');
+  document.getElementById('cookieBanner').style.display='none';
+}
+</script>
+</body>
+</html>

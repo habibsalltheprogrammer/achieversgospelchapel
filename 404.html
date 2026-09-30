@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | Achievers Gospel Chapel</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="icon" href="assets/images/church-logo.jpeg" type="image/jpeg">
+  <style>
+    body { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; background: linear-gradient(160deg, var(--mauve-deep, #2d0a2d), #1a0a1a); color: #fff; padding: 2rem; }
+    .err-logo { width: 90px; height: 90px; border-radius: 50%; object-fit: cover; margin-bottom: 1.5rem; border: 3px solid var(--gold, #c9a84c); box-shadow: 0 0 30px rgba(201,168,76,0.4); }
+    .err-code { font-size: 6rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, var(--gold, #c9a84c), #fff8dc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 0.5rem; }
+    .err-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; color: var(--gold-light, #e8d5a0); }
+    .err-msg { font-size: 0.95rem; color: rgba(255,255,255,0.7); max-width: 420px; line-height: 1.8; margin-bottom: 2.5rem; }
+    .err-verse { font-style: italic; font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 2.5rem; border-left: 3px solid var(--gold, #c9a84c); padding-left: 1rem; text-align: left; max-width: 380px; }
+    .err-links { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .err-btn { padding: 0.7rem 1.8rem; border-radius: 50px; font-weight: 700; font-size: 0.9rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+    .err-btn-primary { background: linear-gradient(135deg, var(--gold-dark, #a07830), var(--gold, #c9a84c)); color: #fff; }
+    .err-btn-secondary { background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+    .err-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  </style>
+</head>
+<body>
+  <img src="assets/images/church-logo.jpeg" alt="AGC Logo" class="err-logo" onerror="this.style.display='none'">
+  <div class="err-code">404</div>
+  <div class="err-title">Page Not Found</div>
+  <p class="err-msg">The page you are looking for may have been moved, renamed, or doesn't exist. But don't worry — God knows exactly where you are!</p>
+  <p class="err-verse">"For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future." — Jeremiah 29:11</p>
+  <div class="err-links">
+    <a href="index.html" class="err-btn err-btn-primary">🏠 Go to Homepage</a>
+    <a href="pages/sermons.html" class="err-btn err-btn-secondary">▶ Watch Sermons</a>
+    <a href="pages/contact.html" class="err-btn err-btn-secondary">✉ ContactUs</a>
+  </div>
+  <script>setTimeout(()=>{ window.location.href='index.html'; }, 15000);</script>
+  <p style="margin-top:2rem;font-size:0.75rem;color:rgba(255,255,255,0.3);">Redirecting to homepage in 15 seconds…</p>
+</body>
+</html>
