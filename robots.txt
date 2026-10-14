@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://achieversgospelchapel.netlify.app/sitemap.xml
+
+Sitemap: https://achieversgospelchapel.org/sitemap.xml
